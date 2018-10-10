@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace GoldRush
+{
+    public class Game
+    {
+        int score;
+        Turnout[] turnouts;
+        Cart[] carts;
+        Ship[] ships;
+    }
+}
