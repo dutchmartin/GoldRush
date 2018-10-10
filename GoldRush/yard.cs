@@ -5,7 +5,8 @@ using System.Text;
 
 namespace GoldRush
 {
-    public class Yard
+    public class Yard: TrackLink
     {
+
     }
 }
