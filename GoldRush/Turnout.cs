@@ -11,7 +11,7 @@ namespace GoldRush
         Daarom heb ik de container incoming gemaakt.
         MAAR omdat er al een outgoing bestaat, namelijk de "Next" overgeorven van TrackLink hoeft die er niet bij */
         public bool isGoingUp;
-        public TrackLink incoming;
+        public TrackLink previous;
         public TrackLink option1;
         public TrackLink option2;
     }

@@ -5,10 +5,7 @@ using System.Text;
 
 namespace GoldRush
 {
-    public class TrackLink
+    public class Yard
     {
-        public TrackLink Next{ get; protected set;}
-        public Cart occupant;
-
     }
 }

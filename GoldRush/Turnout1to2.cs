@@ -13,6 +13,7 @@ namespace GoldRush
          */
         public Turnout1to2(Turnout entry, bool isGoingUp){
             this.isGoingUp = isGoingUp;
+            previous = entry;
         }
     }
 }

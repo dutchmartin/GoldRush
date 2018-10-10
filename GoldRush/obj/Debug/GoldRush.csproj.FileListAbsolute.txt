@@ -5,3 +5,10 @@ C:\Users\Simon\Documents\School\2018-2019\Mod3\GoldRush\GoldRush\obj\Debug\GoldR
 C:\Users\Simon\Documents\School\2018-2019\Mod3\GoldRush\GoldRush\obj\Debug\GoldRush.csproj.CoreCompileInputs.cache
 C:\Users\Simon\Documents\School\2018-2019\Mod3\GoldRush\GoldRush\obj\Debug\GoldRush.exe
 C:\Users\Simon\Documents\School\2018-2019\Mod3\GoldRush\GoldRush\obj\Debug\GoldRush.pdb
+C:\Users\Simon\Documents\School\2018-2019\ModGoldrush\GoldRush\obj\Debug\GoldRush.csprojAssemblyReference.cache
+C:\Users\Simon\Documents\School\2018-2019\ModGoldrush\GoldRush\obj\Debug\GoldRush.csproj.CoreCompileInputs.cache
+C:\Users\Simon\Documents\School\2018-2019\ModGoldrush\GoldRush\obj\Debug\GoldRush.exe
+C:\Users\Simon\Documents\School\2018-2019\ModGoldrush\GoldRush\obj\Debug\GoldRush.pdb
+C:\Users\Simon\Documents\School\2018-2019\ModGoldrush\GoldRush\bin\Debug\GoldRush.exe.config
+C:\Users\Simon\Documents\School\2018-2019\ModGoldrush\GoldRush\bin\Debug\GoldRush.exe
+C:\Users\Simon\Documents\School\2018-2019\ModGoldrush\GoldRush\bin\Debug\GoldRush.pdb
