@@ -24,7 +24,7 @@
   <Class Name="GoldRush.Cart">
     <Position X="4.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAACAACAAAAAABAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAgAAAAAAAACAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Cart.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -71,7 +71,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.Yard">
-    <Position X="8.75" Y="3.25" Width="1.5" />
+    <Position X="9" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Yard.cs</FileName>

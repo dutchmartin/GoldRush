@@ -55,6 +55,7 @@
     <Compile Include="Turnout.cs" />
     <Compile Include="Turnout1to2.cs" />
     <Compile Include="Turnout2To1.cs" />
+    <Compile Include="Yard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

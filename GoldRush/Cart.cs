@@ -21,7 +21,7 @@ namespace GoldRush
             if(location is Quay)
                 isLoaded = false;
 
-            if(allowMovement())
+            if(canMove())
             {
                 location.occupant = null;
                 location.Next.occupant = this;
@@ -32,13 +32,8 @@ namespace GoldRush
                 /* TODO: CRASH!!!!!!! */
             }
         }
-        public bool allowMovement()
+        public override bool canMove()
         {
-             /* NIEUWE GEDACHTEGANG
-             Je loopt vanaf het begin over de tracks heen A B en C. Dan maak je van alle wagentjes tot aan een next is null een queue
-             Deze queue werk je daarna af. Dan hoeven karretjes alleen nog maar te checken of location.next leeg is of niet,
-             Want dan heb je meteen rekening gehouden met het probleem van rijd volgorde. Alle wagentjes die al zijn bewogen staan 
-             voor wagens die nog moeten */
              if(location.Next == null)
              {
                  return false;
