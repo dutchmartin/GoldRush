@@ -7,9 +7,10 @@ namespace GoldRush
 {
     public abstract class Turnout: TrackLink
     {
-        TrackLink incoming;
-        TrackLink outgoing;
-        TrackLink option1;
-        TrackLink option2;
+        public bool isGoingUp;
+        public TrackLink incoming;
+        public TrackLink outgoing;
+        public TrackLink option1;
+        public TrackLink option2;
     }
 }

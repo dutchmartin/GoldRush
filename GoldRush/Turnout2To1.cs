@@ -7,6 +7,9 @@ namespace GoldRush
 {
     public class Turnout2To1:Turnout
     {
-
+        public Turnout2To1(bool isGoingUp)
+        {
+            this.isGoingUp = isGoingUp;
+        }
     }
 }
