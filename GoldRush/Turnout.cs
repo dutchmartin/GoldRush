@@ -12,7 +12,7 @@ namespace GoldRush
         MAAR omdat er al een outgoing bestaat, namelijk de "Next" overgeorven van TrackLink hoeft die er niet bij */
         public bool isGoingUp;
         public TrackLink previous;
-        public TrackLink option1;
-        public TrackLink option2;
+        public TrackLink optinoUp;
+        public TrackLink optionDown;
     }
 }

@@ -15,5 +15,19 @@ namespace GoldRush
             this.isGoingUp = isGoingUp;
             previous = entry;
         }
+
+        public void ChangeDirection()
+        {
+            if(isGoingUp)
+            {
+                isGoingUp = false;
+                Next = optionDown;
+            }
+            else
+            {
+                isGoingUp = true;
+                Next = optinoUp;
+            }
+        }
     }
 }

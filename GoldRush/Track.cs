@@ -7,14 +7,14 @@ namespace GoldRush
 {
     public class Track
     {
-        TrackLink First;
+        public TrackLink First;
 
-        public void addCart()
+        public Track()
         {
-            Cart newCart = new Cart(First);
+            First = new TrackLink();
         }
 
-        private Queue<Cart> createCartsQueue()
+        public Queue<Cart> createCartsQueue()
         {
              /* NIEUWE GEDACHTEGANG
              Je loopt vanaf het begin over de tracks heen A B en C. Dan maak je van alle wagentjes tot aan een next is null een queue
@@ -32,15 +32,6 @@ namespace GoldRush
                 current = current.Next;
             }
             return carts;
-        }
-
-        public void moveCarts()
-        {
-            Queue<Cart> carts = createCartsQueue();
-            while(carts.Count > 0)
-            {
-                carts.Dequeue().Move();
-            }
         }
     }
     
