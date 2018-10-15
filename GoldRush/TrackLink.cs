@@ -7,8 +7,9 @@ namespace GoldRush
 {
     public class TrackLink
     {
-        public TrackLink Next;
+        //public TrackLink Next;
         public Cart occupant;
+        public TrackLink Next;
 
     }
 }

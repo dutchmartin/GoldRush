@@ -28,7 +28,7 @@ namespace UnitTestProject1
         public void CartEmpties()
         {
             hangar.AddCart();
-            Cart cart1 = hangar.track.First.occupant;
+            Cart cart1 = (Cart) hangar.track.First.occupant;
             hangar.moveCarts();
             Assert.IsTrue(cart1.isLoaded);
             hangar.moveCarts();

@@ -8,7 +8,8 @@ namespace GoldRush
     public class Ship : MoveableObject
     {
         public int load{get; protected set;}
-        private bool isDocked;
+        public TrackLink location;
+        // private bool isDocked;
 
         public Ship()
         {
@@ -16,12 +17,22 @@ namespace GoldRush
         }
         public override bool canMove()
         {
-            if(!isDocked)
+            if(location is Quay)
+            {
+                if(location.occupant != null)
+                {
+                    load++;
+                }
+            }
+            else
+            {
                 return true;
+            }
 
             if(load == 8)
+            {
                 return true;
-
+            }
             return false;
         }
 
