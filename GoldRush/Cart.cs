@@ -7,14 +7,13 @@ namespace GoldRush
 {
     public class Cart : MoveableObject
     {
-        bool isLoaded;
+        public bool isLoaded {get; protected set;}
         TrackLink location;
 
-        public Cart(TrackLink location)
+        public Cart(TrackLink placement)
         {
             isLoaded = true;
-            this.location = location;
-            location.occupant = this;
+            location = placement;
         }
 
         public override void Move()
@@ -30,6 +29,7 @@ namespace GoldRush
             }
             else
             {
+                Console.WriteLine("Crash");
                 /* TODO: CRASH!!!!!!! */
             }
         }

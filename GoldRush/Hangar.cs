@@ -7,24 +7,30 @@ namespace GoldRush
 {
     public class Hangar
     {
-        private Track _track;
+        public Track track;
 
         public Hangar()
         {
-            _track = new Track();
+            track = new Track();
         }
 
-        public void AddCart()
+        public bool AddCart()
         {
-            Cart newCart  = new Cart(_track.First);
+            if(this.track.First.occupant != null)
+            {
+                return false;
+            }
+            Cart newCart  = new Cart(track.First);
+            track.First.occupant = newCart;
+            return true;
         }
 
         public void moveCarts()
         {
-            Queue<Cart> carts = _track.createCartsQueue();
+            Stack<Cart> carts = track.createCartsQueue();
             while(carts.Count > 0)
             {
-                carts.Dequeue().Move();
+                carts.Pop().Move();
             }
         }
     }

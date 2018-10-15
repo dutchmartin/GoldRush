@@ -9,9 +9,12 @@ namespace GoldRush
     {
         /* Omdat tijdens het genereren van de hele track misschien nog niet alle "next" track elementen 
         bekend zijn kun je alleen de startpositie aangeven van dit track. */
-        public Turnout2To1(bool isGoingUp)
+        public Turnout2To1(bool isGoingUp, TrackLink optionUp, TrackLink optionDown)
         {
             this.isGoingUp = isGoingUp;
+            this.optionUp = optionUp;
+            this.optionDown = optionDown;
+            this.Next = new TrackLink();
         }
 
         public void ChangeDirection()
@@ -24,7 +27,7 @@ namespace GoldRush
             else
             {
                 isGoingUp = true;
-                previous = optinoUp;
+                previous = optionUp;
             }
         }
     }
