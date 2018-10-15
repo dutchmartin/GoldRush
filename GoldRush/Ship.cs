@@ -22,6 +22,7 @@ namespace GoldRush
                 if(location.occupant != null)
                 {
                     load++;
+                    location.occupant.isLoaded = false;
                 }
             }
             else
@@ -38,7 +39,10 @@ namespace GoldRush
 
         public override void Move()
         {
-            throw new NotImplementedException();
+            if(canMove())
+            {
+                this.location = location.Next;
+            }
         }
     }
 }
