@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Cart.cs" />
     <Compile Include="Hangar.cs" />
-    <Compile Include="Link.cs" />
     <Compile Include="MoveableObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

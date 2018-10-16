@@ -29,7 +29,7 @@ namespace GoldRush
                 {
                     carts.Push(current.occupant);
                 }
-                current = current.Next;
+                current = (TrackLink)current.Next;
             }
             return carts;
         }
