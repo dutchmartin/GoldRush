@@ -58,9 +58,44 @@ namespace UnitTestProject1
             ship.Move();
             ship.Move();
             ship.Move();
+            cart1.Move();
             ship.Move();
             ship.Move();
             Assert.AreEqual(ship.load, 1);
+        }
+
+        [TestMethod] 
+        public void ShipLeavesWhenFullyLoaded()
+        {
+            ship.location = quay;
+            quayTrack.occupant = null;
+            cart1 = new Cart(quayTrack);
+            ship.Move();
+            quayTrack.occupant = null;
+            cart1 = new Cart(quayTrack);
+            ship.Move();
+            quayTrack.occupant = null;
+            cart1 = new Cart(quayTrack);
+            ship.Move();
+            quayTrack.occupant = null;
+            cart1 = new Cart(quayTrack);
+            ship.Move();
+            quayTrack.occupant = null;
+            cart1 = new Cart(quayTrack);
+            ship.Move();
+            quayTrack.occupant = null;
+            cart1 = new Cart(quayTrack);
+            ship.Move();
+            quayTrack.occupant = null;
+            cart1 = new Cart(quayTrack);
+            ship.Move();
+            quayTrack.occupant = null;
+            cart1 = new Cart(quayTrack);
+            ship.Move();
+            
+            Assert.AreEqual(ship.load,8);
+            Assert.IsNull(quay.ship);
+            Assert.IsNotNull(water4.ship);
         }
 
     }

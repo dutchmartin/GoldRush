@@ -14,6 +14,7 @@ namespace GoldRush
         {
             isLoaded = true;
             location = placement;
+            placement.occupant = this;
         }
 
         public override void Move()

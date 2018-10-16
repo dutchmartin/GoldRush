@@ -40,13 +40,7 @@ namespace GoldRush
             hangar.track.First.Next = secondTrack;
             secondTrack.Next = quayTrack;
             quayTrack.Next = fourthTrack;
-       
-            ship.Move();
-            ship.Move();
-            ship.Move();
-            ship.Move();
-            ship.Move();
-        Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }
