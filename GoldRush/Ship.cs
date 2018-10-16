@@ -32,7 +32,12 @@ namespace GoldRush
             }
             else
             {
-               return true;
+                WaterLink nextWaterLink = (WaterLink)location.Next;
+                if(nextWaterLink.ship == null)
+                {  
+                    return true;
+                }
+               return false;
             }
 
             if(load == 8)
