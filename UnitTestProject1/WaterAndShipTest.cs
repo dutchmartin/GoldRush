@@ -14,6 +14,7 @@ namespace UnitTestProject1
 
         Hangar hangar;
         TrackLink link2;
+        TrackLink link3;
         TrackLink link4;
         WaterQuay quay;
 
@@ -31,6 +32,7 @@ namespace UnitTestProject1
             water3 = new WaterLink();
             hangar = new Hangar();
             link2 = new TrackLink();
+            link3 = new TrackLink();
             link4 = new TrackLink();
             quay = new WaterQuay();
             water1.Next = quay;

@@ -7,11 +7,11 @@ namespace GoldRush
 {
     public class WaterQuay : WaterLink
     {
-        public TrackLink Track;
+        public TrackLink track;
 
-        public WaterQuay()
+        public WaterQuay(TrackLink track)
         {
-            Track = new TrackLink();
+            this.track = track;
         }
     }
 }

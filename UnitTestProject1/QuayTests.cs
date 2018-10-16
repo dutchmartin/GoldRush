@@ -8,33 +8,52 @@ namespace UnitTestProject1
     public class QuayTests
     {
         Hangar hangar;
-        TrackLink second;
-        TrackLink fourth;
+        Cart cart1;
+        TrackLink secondTrack;
+        TrackLink quayTrack;
+        TrackLink fourthTrack;
         WaterQuay quay;
+
+        WaterLink water1;
+        WaterLink water2;
+        WaterLink water4;
         Ship ship;
 
         [TestInitialize]
         public void Initialize()
         {
             hangar = new Hangar();
-            second = new TrackLink();
-            fourth = new TrackLink();
-            quay = new WaterQuay();
+            secondTrack = new TrackLink();
+            quayTrack = new TrackLink();
+            fourthTrack = new TrackLink();
+            quay = new WaterQuay(quayTrack);
             ship = new Ship();
 
-            hangar.track.First.Next = second;
-            second.Next = quay;
-            quay.Next = fourth;
-            //quay.dockedOccupant = ship;
+            water1.ship = ship;
+            water1.Next = water2;
+            water2.Next = quay;
+            quay.Next = water4;
+
+            hangar.track.First.Next = secondTrack;
+            secondTrack.Next = quayTrack;
+            quayTrack.Next = fourthTrack;
         }
         [TestMethod]
-        public void CartEmpties()
+        public void ShipStaysInPlaceWhenUnloaded()
         {
-            hangar.AddCart();
             Cart cart1 = (Cart) hangar.track.First.occupant;
-            hangar.moveCarts();
-            Assert.IsTrue(cart1.isLoaded);
-            Assert.IsFalse(cart1.isLoaded);
+            ship.Move();
+            ship.Move();
+            ship.Move();
+            ship.Move();
+            ship.Move();
+            Assert.AreEqual(quay.ship, ship);
         }
+        [TestMethod]
+        public void ShipGetsLoad()
+        {
+            cart1 = new Cart(quayTrack);
+        }
+
     }
 }
