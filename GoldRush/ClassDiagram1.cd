@@ -3,7 +3,7 @@
   <Class Name="GoldRush.Hangar">
     <Position X="0.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <HashCode>ACAAAAAAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Hangar.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -38,7 +38,7 @@
   <Class Name="GoldRush.Turnout">
     <Position X="5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAAAAAAEAAAAIAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAEAAAAIAAAAAAAAAAAAAAAAAAQAABAA=</HashCode>
       <FileName>Turnout.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -76,6 +76,13 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Yard.cs</FileName>
       <NewMemberFileName>yard.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldRush.TrackLinkFactory">
+    <Position X="2" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAQAAAABAAAAA=</HashCode>
+      <FileName>GameConstruction\TrackLinkFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
