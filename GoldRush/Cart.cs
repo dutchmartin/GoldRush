@@ -8,43 +8,55 @@ namespace GoldRush
     public class Cart : MoveableObject
     {
         public bool isLoaded {get; set;}
+        public bool hasMoved;
         TrackLink location;
 
         public Cart(TrackLink placement)
         {
+            hasMoved = false;
             isLoaded = true;
             location = placement;
+            placement.occupant = this;
         }
 
         public override void Move()
         {
             if(canMove())
             {
-                location.occupant = null;
                 TrackLink nextLocation = (TrackLink)location.Next;
+                if (nextLocation == null)
+                {
+                    return;
+                }
+                location.occupant = null;
                 nextLocation.occupant = this;
-                this.location = nextLocation;
+                location = nextLocation;
             }
-            else
-            {
-                Console.WriteLine("Crash");
-                /* TODO: CRASH!!!!!!! */
-            }
+
+            hasMoved = true;
         }
         public override bool canMove()
         {
             TrackLink nextLocation = (TrackLink)location.Next;
-            if (nextLocation == null)
-             {
-                 return false;
-             }
-
-             if(nextLocation.occupant == null)
-             {
-                 return true;
-             }
-
-             return false;
+            if(nextLocation==null)
+            {
+                return false;
+            }
+            Cart nextCart = nextLocation.occupant;
+            if(nextCart == null)
+            {
+                return true;
+            }
+            if(location is Yard)
+            {
+                return false;
+            }
+            if(!nextCart.canMove())
+            {
+                throw new CartCrashException();
+            }
+            nextCart.Move();
+            return true;
         }
     }
 }

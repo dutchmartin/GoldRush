@@ -9,14 +9,14 @@ namespace UnitTestProject1
     {
         Ship ship1;
         WaterLink water1;
-        Ship water2;
+        WaterQuay water2;
         WaterLink water3;
 
         Hangar hangar;
         TrackLink link2;
         TrackLink link3;
         TrackLink link4;
-        Ship quay;
+        WaterQuay quay;
 
         [TestInitialize]
         public void Init()
@@ -26,15 +26,15 @@ namespace UnitTestProject1
             ~Q~
              Q
             -Q- - H        */
-            ship1 = new Ship();
             water1 = new WaterLink();
-            water2 = new Ship();
+            water2 = new WaterQuay(null);
             water3 = new WaterLink();
             hangar = new Hangar();
             link2 = new TrackLink();
             link3 = new TrackLink();
             link4 = new TrackLink();
-            quay = new Ship();
+            quay = new WaterQuay(null);
+            ship1 = new Ship(water1);
             water1.Next = quay;
             //quay.NextWater = water3;
             hangar.track.First.Next = link2;

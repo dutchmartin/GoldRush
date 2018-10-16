@@ -12,7 +12,7 @@ namespace UnitTestProject1
         TrackLink secondTrack;
         TrackLink quayTrack;
         TrackLink fourthTrack;
-        Ship quay;
+        WaterQuay quay;
 
         WaterLink water1;
         WaterLink water2;
@@ -26,8 +26,11 @@ namespace UnitTestProject1
             secondTrack = new TrackLink();
             quayTrack = new TrackLink();
             fourthTrack = new TrackLink();
-            quay = new Ship(quayTrack);
-            ship = new Ship();
+            water1 = new WaterLink();
+            water2 = new WaterLink();
+            water4 = new WaterLink();
+            quay = new WaterQuay(quayTrack);
+            ship = new Ship(water1);
 
             water1.ship = ship;
             water1.Next = water2;
@@ -41,7 +44,6 @@ namespace UnitTestProject1
         [TestMethod]
         public void ShipStaysInPlaceWhenUnloaded()
         {
-            Cart cart1 = (Cart) hangar.track.First.occupant;
             ship.Move();
             ship.Move();
             ship.Move();
@@ -53,6 +55,60 @@ namespace UnitTestProject1
         public void ShipGetsLoad()
         {
             cart1 = new Cart(quayTrack);
+            ship.Move();
+            ship.Move();
+            ship.Move();
+            cart1.Move();
+            ship.Move();
+            ship.Move();
+            Assert.AreEqual(ship.load, 1);
+        }
+
+        [TestMethod] 
+        public void ShipLeavesWhenFullyLoaded()
+        {
+            ship.location = quay;
+            quayTrack.occupant = null;
+            cart1 = new Cart(quayTrack);
+            ship.Move();
+            quayTrack.occupant = null;
+            cart1 = new Cart(quayTrack);
+            ship.Move();
+            quayTrack.occupant = null;
+            cart1 = new Cart(quayTrack);
+            ship.Move();
+            quayTrack.occupant = null;
+            cart1 = new Cart(quayTrack);
+            ship.Move();
+            quayTrack.occupant = null;
+            cart1 = new Cart(quayTrack);
+            ship.Move();
+            quayTrack.occupant = null;
+            cart1 = new Cart(quayTrack);
+            ship.Move();
+            quayTrack.occupant = null;
+            cart1 = new Cart(quayTrack);
+            ship.Move();
+            quayTrack.occupant = null;
+            cart1 = new Cart(quayTrack);
+            ship.Move();
+            
+            Assert.AreEqual(ship.load,8);
+            Assert.IsNull(quay.ship);
+            Assert.IsNotNull(water4.ship);
+        }
+        [TestMethod]
+        public void ShipWaitsOnOtherBoatToMove()
+        {
+            ship.Move();
+            Ship ship2 = new Ship(water1);
+            ship.Move();
+            ship2.Move();
+            ship2.Move();
+            ship2.Move();
+            ship2.Move();
+            Assert.AreEqual(water2.ship, ship2);
+            Assert.AreEqual(quay.ship, ship);
         }
 
     }

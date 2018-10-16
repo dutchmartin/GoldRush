@@ -11,24 +11,33 @@ namespace GoldRush
         public WaterLink location;
         // private bool isDocked;
 
-        public Ship()
+        public Ship(WaterLink locate)
         {
+            location = locate;
             load = 0;
         }
         public override bool canMove()
         {
-            if(location is Ship)
+            if(location is WaterQuay)
             {
-                Cart occupant = ((Ship)location).Track.occupant;
+               Cart occupant = ((WaterQuay)location).track.occupant;
                if(occupant != null)
                {
-                   load++;
-                   occupant.isLoaded = false;
+                    if(occupant.isLoaded)
+                    {
+                        occupant.isLoaded = false;
+                        load++;
+                    }
                }
             }
             else
             {
-               return true;
+                WaterLink nextWaterLink = (WaterLink)location.Next;
+                if(nextWaterLink.ship == null)
+                {  
+                    return true;
+                }
+               return false;
             }
 
             if(load == 8)
@@ -42,7 +51,9 @@ namespace GoldRush
         {
             if(canMove())
             {
+                location.ship = null;
                 this.location = (WaterLink) location.Next;
+                location.ship = this;
             }
         }
     }
