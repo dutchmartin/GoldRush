@@ -11,6 +11,7 @@ namespace UnitTestProject1
         TrackLink second;
         TrackLink fourth;
         Quay quay;
+        Ship ship;
 
         [TestInitialize]
         public void Initialize()
@@ -19,20 +20,20 @@ namespace UnitTestProject1
             second = new TrackLink();
             fourth = new TrackLink();
             quay = new Quay();
+            ship = new Ship();
 
             hangar.track.First.Next = second;
             second.Next = quay;
             quay.Next = fourth;
+            quay.dockedOccupant = ship;
         }
         [TestMethod]
         public void CartEmpties()
         {
             hangar.AddCart();
-            Cart cart1 = hangar.track.First.occupant;
+            Cart cart1 = (Cart) hangar.track.First.occupant;
             hangar.moveCarts();
             Assert.IsTrue(cart1.isLoaded);
-            hangar.moveCarts();
-            hangar.moveCarts();
             Assert.IsFalse(cart1.isLoaded);
         }
     }

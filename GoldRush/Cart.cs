@@ -7,7 +7,7 @@ namespace GoldRush
 {
     public class Cart : MoveableObject
     {
-        public bool isLoaded {get; protected set;}
+        public bool isLoaded {get; set;}
         TrackLink location;
 
         public Cart(TrackLink placement)
@@ -18,9 +18,6 @@ namespace GoldRush
 
         public override void Move()
         {
-            if(location is Quay)
-                isLoaded = false;
-
             if(canMove())
             {
                 location.occupant = null;

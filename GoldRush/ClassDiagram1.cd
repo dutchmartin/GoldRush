@@ -15,28 +15,28 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.TrackLink">
-    <Position X="5" Y="4" Width="1.5" />
+    <Position X="7.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>TrackLink.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.Cart">
-    <Position X="4.5" Y="1" Width="1.5" />
+    <Position X="11.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAgAAAAAAAACAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Cart.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.Ship">
-    <Position X="9" Y="1" Width="1.5" />
+    <Position X="11.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAAAAAIAgAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Ship.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.Turnout">
-    <Position X="5" Y="6.25" Width="1.5" />
+    <Position X="5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAEAAAAIAAAAAAAAAAAAAAAAAAQAABAA=</HashCode>
       <FileName>Turnout.cs</FileName>
@@ -57,21 +57,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.Quay">
-    <Position X="9" Y="5.25" Width="1.5" />
+    <Position X="7.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>Quay.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.MoveableObject">
-    <Position X="6.75" Y="0.5" Width="1.5" />
+    <Position X="11.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAgAAAAAAAACAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MoveableObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.Yard">
-    <Position X="9" Y="4" Width="1.5" />
+    <Position X="9.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Yard.cs</FileName>
@@ -83,6 +83,18 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAQAAAABAAAAA=</HashCode>
       <FileName>GameConstruction\TrackLinkFactory.cs</FileName>
+  <Class Name="GoldRush.WaterLink">
+    <Position X="5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>WaterLink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldRush.River">
+    <Position X="3" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>River.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -16,6 +16,15 @@ namespace GoldRush
             previous = entry;
             optionDown = new TrackLink();
             optionUp = new TrackLink();
+            if(isGoingUp)
+            {
+                Next = optionUp;
+            }
+            else
+            {
+                Next = optionDown;
+            }
+            //TODO set next!
         }
 
         public void ChangeDirection()

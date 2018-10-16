@@ -7,6 +7,7 @@ namespace GoldRush
 {
     public class Quay : TrackLink
     {
-        Ship dockedOccupant;
+        public Ship dockedOccupant;
+        public WaterLink NextWater;
     }
 }

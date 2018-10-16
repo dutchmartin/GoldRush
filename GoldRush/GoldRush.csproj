@@ -46,6 +46,7 @@
     <Compile Include="Cart.cs" />
     <Compile Include="GameConstruction\GameBuilder.cs" />
     <Compile Include="Hangar.cs" />
+    <Compile Include="Link.cs" />
     <Compile Include="MoveableObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,6 +56,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Quay.cs" />
+    <Compile Include="River.cs" />
     <Compile Include="Ship.cs" />
     <Compile Include="Track.cs" />
     <Compile Include="TrackLink.cs" />
@@ -62,6 +64,7 @@
     <Compile Include="Turnout.cs" />
     <Compile Include="Turnout1to2.cs" />
     <Compile Include="Turnout2To1.cs" />
+    <Compile Include="WaterLink.cs" />
     <Compile Include="Yard.cs" />
   </ItemGroup>
   <ItemGroup>

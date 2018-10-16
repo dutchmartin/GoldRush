@@ -29,14 +29,14 @@ namespace UnitTestProject1
             hangar.AddCart();
             TrackLink second = new TrackLink();
             hangar.track.First.Next = second;
-            Cart cart1 = hangar.track.First.occupant;
+            Cart cart1 = (Cart) hangar.track.First.occupant;
             Assert.IsTrue(cart1.canMove());
         }
         [TestMethod]
         public void CantMoveReturnsFalse()
         {
             hangar.AddCart();
-            Cart cart1 = hangar.track.First.occupant;
+            Cart cart1 = (Cart) hangar.track.First.occupant;
             Assert.IsFalse(cart1.canMove());    
         }
 
