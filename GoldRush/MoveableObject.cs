@@ -7,8 +7,7 @@ namespace GoldRush
 {
     public abstract class MoveableObject
     {
-        bool isLoaded;
-        Track location;
+        public bool isLoaded;
         public abstract bool canMove();
         public abstract void Move();
     }

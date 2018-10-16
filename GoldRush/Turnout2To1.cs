@@ -19,7 +19,11 @@ namespace GoldRush
 
         public void ChangeDirection()
         {
-            if(isGoingUp)
+            if (occupant != null)
+            {
+                return;
+            }
+            if (isGoingUp)
             {
                 isGoingUp = false;
                 previous = optionDown;

@@ -5,11 +5,11 @@ using System.Text;
 
 namespace GoldRush
 {
-    public class Ship : WaterLink
+    public class WaterQuay : WaterLink
     {
         public TrackLink track;
 
-        public Ship(TrackLink track)
+        public WaterQuay(TrackLink track)
         {
             this.track = track;
         }

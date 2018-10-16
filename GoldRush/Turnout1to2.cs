@@ -29,6 +29,10 @@ namespace GoldRush
 
         public void ChangeDirection()
         {
+            if(occupant !=null)
+            {
+                return;
+            }
             if(isGoingUp)
             {
                 isGoingUp = false;

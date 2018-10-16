@@ -7,7 +7,6 @@ namespace GoldRush
 {
     public class Cart : MoveableObject
     {
-        public bool isLoaded {get; set;}
         public bool hasMoved;
         TrackLink location;
 
