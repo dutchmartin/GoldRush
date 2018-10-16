@@ -55,7 +55,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Quay.cs" />
     <Compile Include="River.cs" />
     <Compile Include="Ship.cs" />
     <Compile Include="Track.cs" />
@@ -65,6 +64,7 @@
     <Compile Include="Turnout1to2.cs" />
     <Compile Include="Turnout2To1.cs" />
     <Compile Include="WaterLink.cs" />
+    <Compile Include="WaterQuay.cs" />
     <Compile Include="Yard.cs" />
   </ItemGroup>
   <ItemGroup>

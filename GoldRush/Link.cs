@@ -5,9 +5,8 @@ using System.Text;
 
 namespace GoldRush
 {
-    public class Quay : TrackLink
+    public abstract class Link
     {
-        public Ship dockedOccupant;
-        public WaterLink NextWater;
+        public Link Next;
     }
 }

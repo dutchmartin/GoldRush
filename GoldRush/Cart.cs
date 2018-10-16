@@ -21,8 +21,9 @@ namespace GoldRush
             if(canMove())
             {
                 location.occupant = null;
-                location.Next.occupant = this;
-                location = location.Next;
+                TrackLink nextLocation = (TrackLink)location.Next;
+                nextLocation.occupant = this;
+                this.location = nextLocation;
             }
             else
             {
@@ -32,12 +33,13 @@ namespace GoldRush
         }
         public override bool canMove()
         {
-             if(location.Next == null)
+            TrackLink nextLocation = (TrackLink)location.Next;
+            if (nextLocation == null)
              {
                  return false;
              }
 
-             if(location.Next.occupant == null)
+             if(nextLocation.occupant == null)
              {
                  return true;
              }

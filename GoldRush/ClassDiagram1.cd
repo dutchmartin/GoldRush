@@ -17,7 +17,7 @@
   <Class Name="GoldRush.TrackLink">
     <Position X="7.25" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>TrackLink.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -57,9 +57,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.Quay">
-    <Position X="7.25" Y="1" Width="1.5" />
+    <Position X="8.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Quay.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -84,9 +84,9 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAQAAAABAAAAA=</HashCode>
       <FileName>GameConstruction\TrackLinkFactory.cs</FileName>
   <Class Name="GoldRush.WaterLink">
-    <Position X="5" Y="0.75" Width="1.5" />
+    <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
       <FileName>WaterLink.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -95,6 +95,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>River.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GoldRush.Link">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Link.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
