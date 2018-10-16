@@ -21,7 +21,7 @@ namespace GoldRush
 
         public override void Move()
         {
-            if(collides())
+            if(canMove())
             {
                 TrackLink nextLocation = (TrackLink)location.Next;
                 if (nextLocation == null)
@@ -31,27 +31,32 @@ namespace GoldRush
                 location.occupant = null;
                 nextLocation.occupant = this;
                 location = nextLocation;
-                hasMoved = true;
             }
+
+            hasMoved = true;
         }
-        public override bool collides()
+        public override bool canMove()
         {
-            if(hasMoved)
+            TrackLink nextLocation = (TrackLink)location.Next;
+            if(nextLocation==null)
+            {
+                return false;
+            }
+            Cart nextCart = nextLocation.occupant;
+            if(nextCart == null)
+            {
+                return true;
+            }
+            if(location is Yard)
+            {
+                return false;
+            }
+            if(!nextCart.canMove())
             {
                 throw new CartCrashException();
             }
-            TrackLink nextLocation = (TrackLink)location.Next;
-            if (nextLocation == null)
-             {
-                 return false;
-             }
-
-             Cart nextCart = nextLocation.occupant;
-             if(nextCart != null)
-             {
-                 nextCart.Move();
-             }
-             return true;
+            nextCart.Move();
+            return true;
         }
     }
 }

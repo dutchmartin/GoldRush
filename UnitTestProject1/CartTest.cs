@@ -14,6 +14,8 @@ namespace UnitTestProject1
         TrackLink third;
         Cart cart1;
         Cart cart2;
+        Yard yard1;
+        Yard yard2;
         [TestInitialize]
         public void Initialise()
         {
@@ -21,6 +23,8 @@ namespace UnitTestProject1
             carts = new List<Cart>();
             second = new TrackLink();
             third = new TrackLink();
+            yard1 = new Yard();
+            yard2 = new Yard();
 
             hangar.track.First.Next = second;
             second.Next = third;
@@ -40,7 +44,7 @@ namespace UnitTestProject1
         {
             hangar.AddCart();
             cart1 = (Cart) hangar.track.First.occupant;
-            Assert.IsTrue(cart1.collides());
+            Assert.IsTrue(cart1.canMove());
         }
         [TestMethod]
         public void NewHangarTrackIsEmpty()
@@ -86,6 +90,91 @@ namespace UnitTestProject1
             cart1.Move();
             cart1.hasMoved = false;
             Assert.IsNotNull(third.occupant);
+        }
+        [TestMethod]
+        public void CartDoestnCrashOnYard()
+        {
+            third.Next = yard1;
+            yard1.Next = yard2;
+            cart1 = hangar.AddCart();
+            cart1.Move();
+            cart1.hasMoved = false;
+            cart2 = hangar.AddCart();
+            cart2.Move();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+            cart2.Move();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+            cart2.Move();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+            cart2.Move();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+            cart2.Move();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+            cart2.Move();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+            cart2.Move();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+            cart2.Move();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+            Assert.AreEqual(yard1.occupant, cart2);
+            Assert.AreEqual(yard2.occupant, cart1);
+        }
+        [TestMethod]
+        [ExpectedException (typeof(CartCrashException))]
+        public void CartCrashesAgainstYard()
+        {
+            third.Next = yard1;
+            cart1 = hangar.AddCart();
+            cart1.Move();
+            cart1.hasMoved = false;
+            cart2 = hangar.AddCart();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+            cart2.Move();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+            cart2.Move();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+            cart2.Move();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+            cart2.Move();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+            cart2.Move();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+            cart2.Move();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+            cart2.Move();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+        }
+
+        [TestMethod]
+        [ExpectedException (typeof(CartCrashException))]
+        public void CartCrashAgainstStilStandingCart()
+        {
+            cart1 = hangar.AddCart();
+            cart1.Move();
+            cart1.hasMoved = false;
+            cart2 = hangar.AddCart();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+            cart2.Move();
+            cart1.hasMoved = false;
+            cart2.hasMoved = false;
+            cart2.Move();
         }
     }
 }

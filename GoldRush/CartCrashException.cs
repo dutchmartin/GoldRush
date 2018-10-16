@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GoldRush
 {
-    class CartCrashException : Exception
+    public class CartCrashException : Exception
     {
         public String GameOverMessage;
 
