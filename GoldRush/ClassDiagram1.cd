@@ -78,6 +78,11 @@
       <NewMemberFileName>yard.cs</NewMemberFileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="GoldRush.TrackLinkFactory">
+    <Position X="2" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAQAAAABAAAAA=</HashCode>
+      <FileName>GameConstruction\TrackLinkFactory.cs</FileName>
   <Class Name="GoldRush.WaterLink">
     <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
