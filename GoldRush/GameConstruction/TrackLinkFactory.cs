@@ -21,8 +21,8 @@ namespace GoldRush
                     return new Hangar();
                 //case 'ա':
                 //    return new Cart();
-                case '֍':
-                    return new WaterQuay();
+                //case '֍':
+               //     return new Quay();
                 case '۝':
                     return new Yard();
                 case 'ᚓ':
@@ -32,7 +32,7 @@ namespace GoldRush
                 case '᚛':
                     return new Turnout2To1(false, null, null );
                 default:
-                    return new TrackLink();
+                    return new object();
             }
         }
     }

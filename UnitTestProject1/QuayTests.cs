@@ -12,7 +12,7 @@ namespace UnitTestProject1
         TrackLink secondTrack;
         TrackLink quayTrack;
         TrackLink fourthTrack;
-        WaterQuay quay;
+        Ship quay;
 
         WaterLink water1;
         WaterLink water2;
@@ -26,7 +26,7 @@ namespace UnitTestProject1
             secondTrack = new TrackLink();
             quayTrack = new TrackLink();
             fourthTrack = new TrackLink();
-            quay = new WaterQuay(quayTrack);
+            quay = new Ship(quayTrack);
             ship = new Ship();
 
             water1.ship = ship;

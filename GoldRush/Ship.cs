@@ -17,9 +17,9 @@ namespace GoldRush
         }
         public override bool canMove()
         {
-            if(location is WaterQuay)
+            if(location is Ship)
             {
-                Cart occupant = ((WaterQuay)location).Track.occupant;
+                Cart occupant = ((Ship)location).Track.occupant;
                if(occupant != null)
                {
                    load++;
