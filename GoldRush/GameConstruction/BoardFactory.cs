@@ -20,7 +20,7 @@ namespace GoldRush
         public Board GetBoard()
         {
             var matrix = GetLevelObjectMap();
-            AssembleLinks( matrix );
+            AssembleLinks(matrix);
             return new Board
                 (
                 0,
@@ -59,7 +59,7 @@ namespace GoldRush
             }
             return LevelObjectMap;
         }
-        
+
         private List<Location> GetHangarLocations(Object[][] LevelMatrix)
         {
             /*
@@ -94,7 +94,7 @@ namespace GoldRush
                 .ToList();
         }
 
-        struct Location
+        private struct Location
         {
             public int y;
             public int x;
@@ -105,25 +105,92 @@ namespace GoldRush
         {
             return null;
         }
+
         private void AssembleLinks(Object[][] Matrix)
         {
             var locations = GetHangarLocations(Matrix);
-            foreach(Location HangarLocation in locations)
+            foreach (Location HangarLocation in locations)
             {
+                Location current = HangarLocation;
+                // Does not work, hangar is not a track
+                TrackLink Last = (TrackLink) getObjectFromLocation(Matrix, HangarLocation);
+                while (true)
+                {
+                    // Find the next link if it exists.
+                    TrackLink NextTrackLink;
+                    current = NextLink(Matrix, current, out NextTrackLink);
+                    if (current.x == -1)
+                        break;
 
+                }
             }
         }
 
-        private Location NextLink(Object[][] matrix, Location current)
+        // Bon appetit spagetti!
+        private Location NextLink(Object[][] matrix, Location current, out TrackLink NextTrackLink)
         {
-            return new Location();
+            if (getObjectFromLocation(matrix, RightLocation(current)) is TrackLink)
+            {
+                NextTrackLink = getObjectFromLocation(matrix, RightLocation(current)) as TrackLink;
+                return RightLocation(current);
+            }
+            else if (getObjectFromLocation(matrix, UnderLocation(current)) is TrackLink)
+            {
+                NextTrackLink = getObjectFromLocation(matrix, UnderLocation(current)) as TrackLink;
+                return UnderLocation(current);
+            }
+            else if (getObjectFromLocation(matrix, LeftLocation(current)) is TrackLink)
+            {
+                NextTrackLink = getObjectFromLocation(matrix, LeftLocation(current)) as TrackLink;
+                return LeftLocation(current);
+            }
+            else if (getObjectFromLocation(matrix, AboveLocation(current)) is TrackLink)
+            {
+                NextTrackLink = getObjectFromLocation(matrix, AboveLocation(current)) as TrackLink;
+                return AboveLocation(current);
+            }
+            else
+            {
+                NextTrackLink = null;
+                return new Location { x = -1 };
+            }  
         }
+        private Location RightLocation(Location loc) 
+            => 
+            new Location
+            {
+                y = loc.y,
+                x = loc.x + 1
+            };
+        private Location UnderLocation(Location loc)
+            =>
+            new Location
+             {
+                 y = loc.y + 1,
+                 x = loc.x,
+             };
+        private Location LeftLocation(Location loc)
+            =>
+            new Location
+            {
+                y = loc.y,
+                x = loc.x -1,
+            };
+        private Location AboveLocation(Location loc)
+            =>
+            new Location
+             {
+                 y = loc.y - 1,
+                 x = loc.x,
+             };
 
         private object getObjectFromLocation(Object[][] matrix, Location loc)
         {
-            if (loc.x >= matrix.Length || loc.y >= matrix.First().Length)
+            if (loc.x >= matrix.Length || loc.y >= matrix.First().Length || loc.x < 0 || loc.x < 0)
             {
-                throw new ArgumentOutOfRangeException("Could not fetch from matrix[{0}][{1}] with x " + loc.x + " y " + loc.y, matrix.Length, matrix.First().Length.ToString());
+                // Use nullObject pattern;
+                return new object();
+                //throw new ArgumentOutOfRangeException("Could not fetch from matrix[{0}][{1}] with x " + loc.x + " y " + loc.y, matrix.Length, matrix.First().Length.ToString());
             }
             return matrix[loc.y][loc.x];
         }
