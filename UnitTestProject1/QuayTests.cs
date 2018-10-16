@@ -97,6 +97,19 @@ namespace UnitTestProject1
             Assert.IsNull(quay.ship);
             Assert.IsNotNull(water4.ship);
         }
+        [TestMethod]
+        public void ShipWaitsOnOtherBoatToMove()
+        {
+            ship.Move();
+            Ship ship2 = new Ship(water1);
+            ship.Move();
+            ship2.Move();
+            ship2.Move();
+            ship2.Move();
+            ship2.Move();
+            Assert.AreEqual(water2.ship, ship2);
+            Assert.AreEqual(quay.ship, ship);
+        }
 
     }
 }
