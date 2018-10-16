@@ -2,36 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Timers;
 
 namespace GoldRush
 {
     public class Game
     {
-        int score;
-        Turnout[] turnouts;
-        Hangar[] hangars;
-        Ship[] ships;
-
+        Board board {get; set;}
+        int Score = 0;
+        Timer timer;
+        int interval;
         public Game()
         {
-            Hangar A = new Hangar();
-            Hangar B = new Hangar();
-            Hangar C = new Hangar();
-            hangars = new Hangar[3];
-            turnouts = new Turnout[5];
-            hangars[0] = A;
-            hangars[1] = B;
-            hangars[2] = C;
+            interval = 5000;
+            timer = new Timer(interval);
+            timer.Elapsed += OnTimedEvent;
+            timer.AutoReset = true;
+            timer.Enabled = true;
+        }
 
-            /* Een current track link maken om het track op te bouwen */
-            TrackLink CurrentA = A.track.First;
-            TrackLink CurrentB = B.track.First;
-            TrackLink CurrentC = C.track.First;
-
-            CurrentA.Next = new TrackLink();
-            CurrentA = CurrentA.Next;
-            CurrentB.Next = new TrackLink();
-            CurrentB = CurrentB.Next;            
+        public void OnTimedEvent(Object source, ElapsedEventArgs e)
+        {
+            //Render het board
+            //Tel het aantal intervallen met elkaar op en verklein het interval daarmee
+            Console.WriteLine("The Elapsed event was raised at {0:HH:mm:ss.fff}", e.SignalTime);
+            Console.WriteLine(timer.Interval);
+            timer.Interval -= 100;
         }
     }
 }

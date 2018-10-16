@@ -46,6 +46,7 @@
     <Compile Include="Board.cs" />
     <Compile Include="Cart.cs" />
     <Compile Include="CartCrashException.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="GameConstruction\BoardFactory.cs" />
     <Compile Include="Hangar.cs" />
     <Compile Include="Link.cs" />
@@ -71,7 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="levels\Level.txt" />
