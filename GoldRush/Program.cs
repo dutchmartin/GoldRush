@@ -10,16 +10,43 @@ namespace GoldRush
     {
         static void Main(string[] args)
         {
-            Hangar hangar = new Hangar();
-            TrackLink second = new TrackLink();
-            TrackLink third = new TrackLink();
-            second.Next = third;
-            hangar.track.First.Next = second;
-            hangar.AddCart();
-            hangar.moveCarts();
-            hangar.AddCart();
-            hangar.moveCarts();
-            Console.ReadKey();
+            Hangar hangar;
+            Cart cart1;
+            TrackLink secondTrack;
+            TrackLink quayTrack;
+            TrackLink fourthTrack;
+            WaterQuay quay;
+
+            WaterLink water1;
+            WaterLink water2;
+            WaterLink water4;
+            Ship ship;
+
+            hangar = new Hangar();
+            secondTrack = new TrackLink();
+            quayTrack = new TrackLink();
+            fourthTrack = new TrackLink();
+            water1 = new WaterLink();
+            water2 = new WaterLink();
+            water4 = new WaterLink();
+            quay = new WaterQuay(quayTrack);
+            ship = new Ship(water1);
+
+            water1.ship = ship;
+            water1.Next = water2;
+            water2.Next = quay;
+            quay.Next = water4;
+
+            hangar.track.First.Next = secondTrack;
+            secondTrack.Next = quayTrack;
+            quayTrack.Next = fourthTrack;
+       
+            ship.Move();
+            ship.Move();
+            ship.Move();
+            ship.Move();
+            ship.Move();
+        Console.ReadKey();
         }
     }
 }
