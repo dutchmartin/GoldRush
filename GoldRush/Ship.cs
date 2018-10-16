@@ -16,7 +16,7 @@ namespace GoldRush
             location = locate;
             load = 0;
         }
-        public override bool canMove()
+        public override bool collides()
         {
             if(location is WaterQuay)
             {
@@ -44,7 +44,7 @@ namespace GoldRush
 
         public override void Move()
         {
-            if(canMove())
+            if(collides())
             {
                 location.ship = null;
                 this.location = (WaterLink) location.Next;

@@ -9,7 +9,7 @@ namespace GoldRush
     {
         bool isLoaded;
         Track location;
-        public abstract bool canMove();
+        public abstract bool collides();
         public abstract void Move();
     }
 }

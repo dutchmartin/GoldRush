@@ -8,7 +8,7 @@ namespace GoldRush
     public class Cart : MoveableObject
     {
         public bool isLoaded {get; set;}
-        bool hasMoved;
+        public bool hasMoved;
         TrackLink location;
 
         public Cart(TrackLink placement)
@@ -21,25 +21,24 @@ namespace GoldRush
 
         public override void Move()
         {
-            if(canMove())
+            if(collides())
             {
-                location.occupant = null;
                 TrackLink nextLocation = (TrackLink)location.Next;
+                if (nextLocation == null)
+                {
+                    return;
+                }
+                location.occupant = null;
                 nextLocation.occupant = this;
-                this.location = nextLocation;
+                location = nextLocation;
                 hasMoved = true;
             }
-            else
-            {
-                Console.WriteLine("Crash");
-                /* TODO: CRASH!!!!!!! */
-            }
         }
-        public override bool canMove()
+        public override bool collides()
         {
             if(hasMoved)
             {
-                return false;
+                throw new CartCrashException();
             }
             TrackLink nextLocation = (TrackLink)location.Next;
             if (nextLocation == null)
@@ -52,9 +51,7 @@ namespace GoldRush
              {
                  nextCart.Move();
              }
-
-
-             return false;
+             return true;
         }
     }
 }

@@ -14,18 +14,18 @@ namespace GoldRush
             track = new Track();
         }
 
-        public bool AddCart()
+        public Cart AddCart()
         {
             /* Eerst checken of er al een cart op de eerste plek staat van deze hangar
             Zo niet dan kan er een toegevoegd worden.
             Als dit wel het geval is returnt deze functie false */
             if(this.track.First.occupant != null)
             {
-                return false;
+                return null;
             }
             Cart newCart  = new Cart(track.First);
             track.First.occupant = newCart;
-            return true;
+            return newCart;
         }
 
         public void moveCarts()
