@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Board.cs" />
     <Compile Include="Cart.cs" />
+    <Compile Include="CartCrashException.cs" />
     <Compile Include="GameConstruction\BoardFactory.cs" />
     <Compile Include="Hangar.cs" />
     <Compile Include="Link.cs" />
