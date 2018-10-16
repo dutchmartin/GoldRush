@@ -10,7 +10,7 @@ namespace UnitTestProject1
         Hangar hangar;
         TrackLink second;
         TrackLink fourth;
-        Quay quay;
+        WaterQuay quay;
         Ship ship;
 
         [TestInitialize]
@@ -19,13 +19,13 @@ namespace UnitTestProject1
             hangar = new Hangar();
             second = new TrackLink();
             fourth = new TrackLink();
-            quay = new Quay();
+            quay = new WaterQuay();
             ship = new Ship();
 
             hangar.track.First.Next = second;
             second.Next = quay;
             quay.Next = fourth;
-            quay.dockedOccupant = ship;
+            //quay.dockedOccupant = ship;
         }
         [TestMethod]
         public void CartEmpties()

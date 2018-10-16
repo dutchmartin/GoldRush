@@ -12,3 +12,5 @@ C:\Users\Simon\Documents\School\2018-2019\ModGoldrush\GoldRush\obj\Debug\GoldRus
 C:\Users\Simon\Documents\School\2018-2019\ModGoldrush\GoldRush\bin\Debug\GoldRush.exe.config
 C:\Users\Simon\Documents\School\2018-2019\ModGoldrush\GoldRush\bin\Debug\GoldRush.exe
 C:\Users\Simon\Documents\School\2018-2019\ModGoldrush\GoldRush\bin\Debug\GoldRush.pdb
+C:\Users\Simon\Documents\School\2018-2019\ModGoldrush\GoldRush\obj\Debug\GoldRush.Properties.Resources.resources
+C:\Users\Simon\Documents\School\2018-2019\ModGoldrush\GoldRush\obj\Debug\GoldRush.csproj.GenerateResource.cache

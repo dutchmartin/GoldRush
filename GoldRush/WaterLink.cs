@@ -7,6 +7,6 @@ namespace GoldRush
 {
     public class WaterLink: Link
     {
-        public Ship ship;
+        public Ship dockedShip;
     }
 }

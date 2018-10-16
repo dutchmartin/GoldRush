@@ -8,7 +8,7 @@ namespace GoldRush
     public class Ship : MoveableObject
     {
         public int load{get; protected set;}
-        public TrackLink location;
+        public WaterLink location;
         // private bool isDocked;
 
         public Ship()
@@ -17,17 +17,18 @@ namespace GoldRush
         }
         public override bool canMove()
         {
-            if(location is Quay)
+            if(location is WaterQuay)
             {
-                if(location.occupant != null)
-                {
-                    load++;
-                    location.occupant.isLoaded = false;
-                }
+                Cart occupant = ((WaterQuay)location).Track.occupant;
+               if(occupant != null)
+               {
+                   load++;
+                   occupant.isLoaded = false;
+               }
             }
             else
             {
-                return true;
+               return true;
             }
 
             if(load == 8)
@@ -41,7 +42,7 @@ namespace GoldRush
         {
             if(canMove())
             {
-                this.location = location.Next;
+                this.location = (WaterLink) location.Next;
             }
         }
     }
