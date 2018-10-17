@@ -23,11 +23,7 @@ namespace GoldRush
                Cart Occupant = ((WaterQuay)location).track.Occupant;
                if(Occupant != null)
                {
-                    if(Occupant.isLoaded)
-                    {
-                        Occupant.isLoaded = false;
-                        load++;
-                    }
+                    ExchangeLoad(Occupant);
                }
             }
             else
@@ -54,6 +50,15 @@ namespace GoldRush
                 location.Occupant = null;
                 this.location = (WaterLink) location.Next;
                 location.Occupant = this;
+            }
+        }
+
+        public void ExchangeLoad(Cart Occupant)
+        {
+            if(Occupant.isLoaded)
+            {
+                Occupant.isLoaded = false;
+                load++;
             }
         }
     }
