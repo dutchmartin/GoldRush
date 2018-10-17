@@ -7,7 +7,7 @@ namespace GoldRush
 {
     public class Cart : MoveableObject
     {
-        public bool hasMoved;
+        public bool hasMoved { get; set; }
         Track location;
 
         public Cart(Track placement)
