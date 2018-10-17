@@ -71,7 +71,8 @@ namespace GoldRush
         }
         public void MoveShips()
         {
-            Ships.ForEach(s => s.Move());
+            if(Ships.Count > 0)
+                Ships.ForEach(s => s.Move());
         }
 
         public void KeepScore()
