@@ -5,8 +5,9 @@ using System.Text;
 
 namespace GoldRush
 {
-    public class WaterLink: Link
+    public class WaterLink : OccupantLink<Ship>
     {
-        public Ship ship;
+        public Ship Occupant { get; set; }
+        public HasNext Next { get; set; }
     }
 }

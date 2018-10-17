@@ -7,9 +7,9 @@ namespace GoldRush
 {
     public class WaterQuay : WaterLink
     {
-        public TrackLink track;
+        public Track track;
 
-        public WaterQuay(TrackLink track)
+        public WaterQuay(Track track)
         {
             this.track = track;
         }

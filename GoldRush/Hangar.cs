@@ -5,25 +5,19 @@ using System.Text;
 
 namespace GoldRush
 {
-    public class Hangar
+    public class Hangar : Track
     {
-        public Track track;
-
-        public Hangar()
-        {
-            track = new Track();
-        }
 
         public Cart AddCart()
         {
             /* Eerst checken of er al een cart op de eerste plek staat van deze hangar
             Zo niet dan kan er een toegevoegd worden.
             Als dit wel het geval is returnt deze functie false */
-            if(this.track.First.occupant != null)
+            if(this.Occupant != null)
             {
                 return null;
             }
-            Cart newCart  = new Cart(track.First);
+            Cart newCart  = new Cart();
             track.First.occupant = newCart;
             return newCart;
         }
