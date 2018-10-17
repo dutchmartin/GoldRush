@@ -90,12 +90,12 @@ namespace GoldRush.GameConstruction
         }
         private void LinkTurnout(Turnout turnout, int y, int x)
         {
-            // Look above for a Track.
+            // Look below for a Track.
             if (IsType<Track>(y + 1, x))
             {
-                turnout.optionUp = _hasNexts[y + 1][x] as Track;
+                turnout.optionDown = _hasNexts[y + 1][x] as Track;
             }
-            // Look above for a Track.
+            // Look below for a Track.
             if (IsType<Track>(y - 1, x))
             {
                 turnout.optionUp = _hasNexts[y - 1][x] as Track;

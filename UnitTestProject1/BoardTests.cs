@@ -19,7 +19,7 @@ namespace UnitTestProject1
         public void Init()
         {
             List<Hangar> hangars = new List<Hangar>();
-            HashSet<Turnout> turnouts = new HashSet<Turnout>();
+            Dictionary<char,Turnout>  turnouts = new Dictionary<char,Turnout>();
             Hangar hangar1 = new Hangar();
             Hangar hangar2 = new Hangar();
             hangar1Track2 = new Track();
@@ -40,8 +40,8 @@ namespace UnitTestProject1
             hangars.Add(hangar1);
             hangars.Add(hangar2);
 
-            turnouts.Add(turnout1);
-            turnouts.Add(turnout2);
+            turnouts.Add('a', turnout1);
+            turnouts.Add('b', turnout2);
 
             board = new Board(0, null, hangars, turnouts);
             board.FirstRiver.Next = river2;
