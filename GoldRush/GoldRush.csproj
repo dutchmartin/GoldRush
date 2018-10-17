@@ -50,6 +50,7 @@
     <Compile Include="GameConstruction\BoardFactory.cs" />
     <Compile Include="Hangar.cs" />
     <Compile Include="HasNext.cs" />
+    <Compile Include="InputMapper.cs" />
     <Compile Include="MoveableObject.cs" />
     <Compile Include="OccupantLink.cs" />
     <Compile Include="Program.cs" />
