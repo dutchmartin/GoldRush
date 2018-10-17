@@ -13,9 +13,9 @@ namespace UnitTestProject1
         WaterLink water3;
 
         Hangar hangar;
-        TrackLink link2;
-        TrackLink link3;
-        TrackLink link4;
+        Track link2;
+        Track link3;
+        Track link4;
         WaterQuay quay;
 
         [TestInitialize]
@@ -30,14 +30,14 @@ namespace UnitTestProject1
             water2 = new WaterQuay(null);
             water3 = new WaterLink();
             hangar = new Hangar();
-            link2 = new TrackLink();
-            link3 = new TrackLink();
-            link4 = new TrackLink();
+            link2 = new Track();
+            link3 = new Track();
+            link4 = new Track();
             quay = new WaterQuay(null);
             ship1 = new Ship(water1);
             water1.Next = quay;
             //quay.NextWater = water3;
-            hangar.track.First.Next = link2;
+            hangar.Next = link2;
             link2.Next = quay;
             quay.Next = link4;
             

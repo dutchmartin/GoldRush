@@ -53,6 +53,8 @@
     <Compile Include="GameConstruction\HasNext2DArrayFactory.cs" />
     <Compile Include="Hangar.cs" />
     <Compile Include="HasNext.cs" />
+    <Compile Include="InputHandler.cs" />
+    <Compile Include="InputMapper.cs" />
     <Compile Include="MoveableObject.cs" />
     <Compile Include="OccupantLink.cs" />
     <Compile Include="Program.cs" />
@@ -67,7 +69,7 @@
     <Compile Include="Track.cs" />
     <Compile Include="GameConstruction\TrackLinkFactory.cs" />
     <Compile Include="Turnout.cs" />
-    <Compile Include="Turnout1to2.cs" />
+    <Compile Include="Turnout1To2.cs" />
     <Compile Include="Turnout2To1.cs" />
     <Compile Include="WaterLink.cs" />
     <Compile Include="WaterQuay.cs" />

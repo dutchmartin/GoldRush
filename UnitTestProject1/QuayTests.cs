@@ -9,9 +9,9 @@ namespace UnitTestProject1
     {
         Hangar hangar;
         Cart cart1;
-        TrackLink secondTrack;
-        TrackLink quayTrack;
-        TrackLink fourthTrack;
+        Track secondTrack;
+        Track quayTrack;
+        Track fourthTrack;
         WaterQuay quay;
 
         WaterLink water1;
@@ -23,21 +23,21 @@ namespace UnitTestProject1
         public void Initialize()
         {
             hangar = new Hangar();
-            secondTrack = new TrackLink();
-            quayTrack = new TrackLink();
-            fourthTrack = new TrackLink();
+            secondTrack = new Track();
+            quayTrack = new Track();
+            fourthTrack = new Track();
             water1 = new WaterLink();
             water2 = new WaterLink();
             water4 = new WaterLink();
             quay = new WaterQuay(quayTrack);
             ship = new Ship(water1);
 
-            water1.ship = ship;
+            water1.Occupant = ship;
             water1.Next = water2;
             water2.Next = quay;
             quay.Next = water4;
 
-            hangar.track.First.Next = secondTrack;
+            hangar.Next = secondTrack;
             secondTrack.Next = quayTrack;
             quayTrack.Next = fourthTrack;
         }
@@ -49,7 +49,7 @@ namespace UnitTestProject1
             ship.Move();
             ship.Move();
             ship.Move();
-            Assert.AreEqual(quay.ship, ship);
+            Assert.AreEqual(quay.Occupant, ship);
         }
         [TestMethod]
         public void ShipGetsLoad()
@@ -68,34 +68,34 @@ namespace UnitTestProject1
         public void ShipLeavesWhenFullyLoaded()
         {
             ship.location = quay;
-            quayTrack.occupant = null;
+            quayTrack.Occupant = null;
             cart1 = new Cart(quayTrack);
             ship.Move();
-            quayTrack.occupant = null;
+            quayTrack.Occupant = null;
             cart1 = new Cart(quayTrack);
             ship.Move();
-            quayTrack.occupant = null;
+            quayTrack.Occupant = null;
             cart1 = new Cart(quayTrack);
             ship.Move();
-            quayTrack.occupant = null;
+            quayTrack.Occupant = null;
             cart1 = new Cart(quayTrack);
             ship.Move();
-            quayTrack.occupant = null;
+            quayTrack.Occupant = null;
             cart1 = new Cart(quayTrack);
             ship.Move();
-            quayTrack.occupant = null;
+            quayTrack.Occupant = null;
             cart1 = new Cart(quayTrack);
             ship.Move();
-            quayTrack.occupant = null;
+            quayTrack.Occupant = null;
             cart1 = new Cart(quayTrack);
             ship.Move();
-            quayTrack.occupant = null;
+            quayTrack.Occupant = null;
             cart1 = new Cart(quayTrack);
             ship.Move();
             
             Assert.AreEqual(ship.load,8);
-            Assert.IsNull(quay.ship);
-            Assert.IsNotNull(water4.ship);
+            Assert.IsNull(quay.Occupant);
+            Assert.IsNotNull(water4.Occupant);
         }
         [TestMethod]
         public void ShipWaitsOnOtherBoatToMove()
@@ -107,8 +107,8 @@ namespace UnitTestProject1
             ship2.Move();
             ship2.Move();
             ship2.Move();
-            Assert.AreEqual(water2.ship, ship2);
-            Assert.AreEqual(quay.ship, ship);
+            Assert.AreEqual(water2.Occupant, ship2);
+            Assert.AreEqual(quay.Occupant, ship);
         }
 
     }

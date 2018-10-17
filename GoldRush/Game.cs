@@ -8,39 +8,55 @@ namespace GoldRush
 {
     public class Game
     {
-        Board board {get; set;}
-        int Score = 0;
-        Timer timer;
-        int interval;
+        public Board board {get; set;}
+        private Timer timer;
+        private int AmountOfCarts;
         public Game()
         {
-            interval = 2;
+            /* Get a board and get its hangars */
+            while(true)
+            {
+                Play();
+            }
+        }
+
+        public void Play()
+        {
+            #region 
+            /* START Test program */
+            Console.WriteLine("Startgame");
+            /* END */
+            #endregion
+
             timer = new Timer(1000);
             timer.Elapsed += OnTimedEvent;
-            timer.AutoReset = true;
             timer.Enabled = true;
+            board = new Board(0, null, new List<Hangar>(), new HashSet<Turnout>());
+            AmountOfCarts = 1;
+            while(timer.Enabled)
+            {
+                Console.ReadKey();
+                //TODO keylistning
+            }
         }
 
         public void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
-            //Render het board
             //Tel het aantal intervallen met elkaar op en verklein het interval daarmee
-            Console.WriteLine("The Elapsed event was raised at {0:HH:mm:ss.fff}", e.SignalTime);
-            Console.WriteLine(interval);
-            interval--;
-            if (interval == 0)
-            {
-                timer.Stop();
-                /* start game logica */
-                ResetInterval();
-                timer.Start();
-            }
+            timer.Enabled = false;
+            board.MoveShips();
+            board.MoveCarts();
+            board.HasAddedACart(AmountOfCarts);
+            board.HasAddedAShip();
+            board.KeepScore();
+            timer.Enabled = true;
+            Console.WriteLine("Timer executes");
+            //Render het board
         }
 
         public void ResetInterval()
         {
             /* Logica voor het resetten van de timer */
-            interval = 2;
         }
     }
 }

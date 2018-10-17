@@ -10,9 +10,9 @@ namespace GoldRush
         /* een turnout kan een ingang en EFFECTIEF 1 uitgang hebben, namelijk de uitgang waar hij WEL aan doorgeeft
         Daarom heb ik de container incoming gemaakt.
         MAAR omdat er al een outgoing bestaat, namelijk de "Next" overgeorven van TrackLink hoeft die er niet bij */
-        public bool isGoingUp;
-        public Track previous;
-        public Track optionUp;
-        public Track optionDown;
+        public bool isGoingUp {get; protected set;}
+        public Track previous {get; protected set;}
+        public Track optionUp {get; protected set;}
+        public Track optionDown{get; protected set;}
     }
 }

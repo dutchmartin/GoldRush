@@ -23,17 +23,18 @@ namespace GoldRush
                Cart Occupant = ((WaterQuay)location).track.Occupant;
                if(Occupant != null)
                {
-                    if(Occupant.isLoaded)
-                    {
-                        Occupant.isLoaded = false;
-                        load++;
-                    }
+                    ExchangeLoad(Occupant);
                }
             }
             else
             {
                 WaterLink nextWaterLink = (WaterLink)location.Next;
-                if(nextWaterLink.ship == null)
+                if(nextWaterLink == null)
+                {
+                    //TODO remove ship
+                    return false;
+                }
+                if(nextWaterLink.Occupant == null)
                 {  
                     return true;
                 }
@@ -51,9 +52,18 @@ namespace GoldRush
         {
             if(canMove())
             {
-                location.ship = null;
+                location.Occupant = null;
                 this.location = (WaterLink) location.Next;
-                location.ship = this;
+                location.Occupant = this;
+            }
+        }
+
+        public void ExchangeLoad(Cart Occupant)
+        {
+            if(Occupant.isLoaded)
+            {
+                Occupant.isLoaded = false;
+                load++;
             }
         }
     }

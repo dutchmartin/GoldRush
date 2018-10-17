@@ -52,6 +52,7 @@
     <Compile Include="CartTest.cs" />
     <Compile Include="QuayTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BoardTests.cs" />
     <Compile Include="WaterAndShipTest.cs" />
   </ItemGroup>
   <ItemGroup>
