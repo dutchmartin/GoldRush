@@ -64,7 +64,7 @@
     <Compile Include="Track.cs" />
     <Compile Include="GameConstruction\TrackLinkFactory.cs" />
     <Compile Include="Turnout.cs" />
-    <Compile Include="Turnout1to2.cs" />
+    <Compile Include="Turnout1To2.cs" />
     <Compile Include="Turnout2To1.cs" />
     <Compile Include="WaterLink.cs" />
     <Compile Include="WaterQuay.cs" />
