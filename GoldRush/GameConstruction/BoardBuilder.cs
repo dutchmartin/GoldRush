@@ -13,6 +13,7 @@ namespace GoldRush.GameConstruction
 
         // Board Properties.
         public Track TrackEnd { get; private set; }
+        public WaterQuay quay {get; private set;}
         public List<Hangar> Hangars { get; private set; } = new List<Hangar>();
         public Dictionary<char,Turnout> Turnouts { get; private set; } = new Dictionary<char, Turnout>();
 
@@ -24,7 +25,7 @@ namespace GoldRush.GameConstruction
         public Board BuildBoard()
         {
             LayLinks();
-            return new Board(0, TrackEnd, Hangars, Turnouts);
+            return new Board(0, TrackEnd, Hangars, Turnouts, quay);
         }
 
         public void LayLinks()
@@ -73,6 +74,17 @@ namespace GoldRush.GameConstruction
                             {
                                 turnout2To1.Next = _hasNexts[y][x - 1];
                             }
+                            continue;
+                        case WaterQuay quay:
+                            //Look left
+                            AddNext<WaterLink>(quay, y, x-1);
+                            //Lood down
+                            quay.track = (Track)_hasNexts[y-1][x];
+                            this.quay = quay;
+                            continue;
+                        case WaterLink waterLink when waterLink.GetType() == typeof(WaterLink):
+                            //Look left
+                            AddNext<WaterLink>(waterLink, y, x-1);
                             continue;
                         case Track track when track.GetType() == typeof(Track):
                             LinkTracks(track, y, x);

@@ -19,7 +19,7 @@ namespace GoldRush
         public List<Cart> Carts { get; private set; }
         public Dictionary<char, Turnout> Turnouts { get; private set; }
 
-        public Board(int score, Track TrackEnd, List<Hangar> hangars, Dictionary<char, Turnout> turnouts)
+        public Board(int score, Track TrackEnd, List<Hangar> hangars, Dictionary<char, Turnout> turnouts, WaterQuay quay)
         {
             Score = score;
             TrackEnd = TrackEnd;
