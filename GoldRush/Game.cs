@@ -8,30 +8,42 @@ namespace GoldRush
 {
     public class Game
     {
-        Board board {get; set;}
-        Timer timer;
-        int AmountOfCarts;
+        public Board board {get; set;}
+        private Timer timer;
+        private int AmountOfCarts;
         public Game()
         {
             /* Get a board and get its hangars */
+            while(true)
+            {
+                Play();
+            }
+        }
+
+        public void Play()
+        {
             timer = new Timer(1000);
             timer.Elapsed += OnTimedEvent;
-            timer.AutoReset = true;
             timer.Enabled = true;
             Board board = new Board(0, null, new List<Hangar>(), new HashSet<Turnout>());
             AmountOfCarts = 1;
+            while(timer.Enabled)
+            {
+                //TODO keylistning
+            }
         }
 
         public void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
-            //Render het board
             //Tel het aantal intervallen met elkaar op en verklein het interval daarmee
-            /* TODO: MOVE SHIPS
-            TODO: MOVE ALL CARTS
-            TODO: ADD CART */
+            timer.Enabled = false;
             board.MoveShips();
             board.MoveCarts();
-            board.AddCarts(AmountOfCarts);
+            board.HasAddedACart(AmountOfCarts);
+            board.HasAddedAShip();
+            board.KeepScore();
+            timer.Enabled = true;
+            //Render het board
         }
 
         public void ResetInterval()
