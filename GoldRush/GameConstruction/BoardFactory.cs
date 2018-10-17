@@ -25,7 +25,7 @@ namespace GoldRush
                 (
                 0,
                 null,
-                GetUpperTrackLink(),
+                GetUpperTrack(),
                 GetHangars(matrix),
                 null
                 );
@@ -50,11 +50,11 @@ namespace GoldRush
         {
             var level = GetLevelMatrix();
             Object[][] LevelObjectMap = new object[level.Length][];
-            TrackLinkFactory factory = TrackLinkFactory.Instance;
+            TrackFactory factory = TrackFactory.Instance;
             for (int i = 0; i < level.Length; i++)
             {
                 LevelObjectMap[i] = level[i]
-                    .Select(LevelObject => factory.GetTrackLink(LevelObject))
+                    .Select(LevelObject => factory.GetTrack(LevelObject))
                     .ToArray();
             }
             return LevelObjectMap;
@@ -101,7 +101,7 @@ namespace GoldRush
         }
 
 
-        private TrackLink GetUpperTrackLink()
+        private Track GetUpperTrack()
         {
             return null;
         }
@@ -113,12 +113,12 @@ namespace GoldRush
             {
                 Location current = HangarLocation;
                 // Does not work, hangar is not a track
-                TrackLink Last = (TrackLink) getObjectFromLocation(Matrix, HangarLocation);
+                Track Last = (Track) getObjectFromLocation(Matrix, HangarLocation);
                 while (true)
                 {
                     // Find the next link if it exists.
-                    TrackLink NextTrackLink;
-                    current = NextLink(Matrix, current, out NextTrackLink);
+                    Track NextTrack;
+                    current = NextLink(Matrix, current, out NextTrack);
                     if (current.x == -1)
                         break;
 
@@ -127,31 +127,31 @@ namespace GoldRush
         }
 
         // Bon appetit spagetti!
-        private Location NextLink(Object[][] matrix, Location current, out TrackLink NextTrackLink)
+        private Location NextLink(Object[][] matrix, Location current, out Track NextTrack)
         {
-            if (getObjectFromLocation(matrix, RightLocation(current)) is TrackLink)
+            if (getObjectFromLocation(matrix, RightLocation(current)) is Track)
             {
-                NextTrackLink = getObjectFromLocation(matrix, RightLocation(current)) as TrackLink;
+                NextTrack = getObjectFromLocation(matrix, RightLocation(current)) as Track;
                 return RightLocation(current);
             }
-            else if (getObjectFromLocation(matrix, UnderLocation(current)) is TrackLink)
+            else if (getObjectFromLocation(matrix, UnderLocation(current)) is Track)
             {
-                NextTrackLink = getObjectFromLocation(matrix, UnderLocation(current)) as TrackLink;
+                NextTrack = getObjectFromLocation(matrix, UnderLocation(current)) as Track;
                 return UnderLocation(current);
             }
-            else if (getObjectFromLocation(matrix, LeftLocation(current)) is TrackLink)
+            else if (getObjectFromLocation(matrix, LeftLocation(current)) is Track)
             {
-                NextTrackLink = getObjectFromLocation(matrix, LeftLocation(current)) as TrackLink;
+                NextTrack = getObjectFromLocation(matrix, LeftLocation(current)) as Track;
                 return LeftLocation(current);
             }
-            else if (getObjectFromLocation(matrix, AboveLocation(current)) is TrackLink)
+            else if (getObjectFromLocation(matrix, AboveLocation(current)) is Track)
             {
-                NextTrackLink = getObjectFromLocation(matrix, AboveLocation(current)) as TrackLink;
+                NextTrack = getObjectFromLocation(matrix, AboveLocation(current)) as Track;
                 return AboveLocation(current);
             }
             else
             {
-                NextTrackLink = null;
+                NextTrack = null;
                 return new Location { x = -1 };
             }  
         }

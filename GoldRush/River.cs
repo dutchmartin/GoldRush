@@ -5,8 +5,7 @@ using System.Text;
 
 namespace GoldRush
 {
-    public class River
+    public class River : WaterLink
     {
-        public WaterLink First;
     }
 }

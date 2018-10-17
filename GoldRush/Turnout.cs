@@ -5,14 +5,14 @@ using System.Text;
 
 namespace GoldRush
 {
-    public abstract class Turnout: TrackLink
+    public abstract class Turnout: Track
     {
         /* een turnout kan een ingang en EFFECTIEF 1 uitgang hebben, namelijk de uitgang waar hij WEL aan doorgeeft
         Daarom heb ik de container incoming gemaakt.
         MAAR omdat er al een outgoing bestaat, namelijk de "Next" overgeorven van TrackLink hoeft die er niet bij */
         public bool isGoingUp;
-        public TrackLink previous;
-        public TrackLink optionUp;
-        public TrackLink optionDown;
+        public Track previous;
+        public Track optionUp;
+        public Track optionDown;
     }
 }

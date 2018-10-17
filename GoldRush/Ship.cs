@@ -20,12 +20,12 @@ namespace GoldRush
         {
             if(location is WaterQuay)
             {
-               Cart occupant = ((WaterQuay)location).track.occupant;
-               if(occupant != null)
+               Cart Occupant = ((WaterQuay)location).track.Occupant;
+               if(Occupant != null)
                {
-                    if(occupant.isLoaded)
+                    if(Occupant.isLoaded)
                     {
-                        occupant.isLoaded = false;
+                        Occupant.isLoaded = false;
                         load++;
                     }
                }

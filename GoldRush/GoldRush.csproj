@@ -49,8 +49,9 @@
     <Compile Include="Game.cs" />
     <Compile Include="GameConstruction\BoardFactory.cs" />
     <Compile Include="Hangar.cs" />
-    <Compile Include="Link.cs" />
+    <Compile Include="HasNext.cs" />
     <Compile Include="MoveableObject.cs" />
+    <Compile Include="OccupantLink.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -61,7 +62,6 @@
     <Compile Include="River.cs" />
     <Compile Include="Ship.cs" />
     <Compile Include="Track.cs" />
-    <Compile Include="TrackLink.cs" />
     <Compile Include="GameConstruction\TrackLinkFactory.cs" />
     <Compile Include="Turnout.cs" />
     <Compile Include="Turnout1to2.cs" />

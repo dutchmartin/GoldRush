@@ -14,8 +14,8 @@ namespace GoldRush
         public Turnout1to2(Turnout entry, bool isGoingUp){
             this.isGoingUp = isGoingUp;
             previous = entry;
-            optionDown = new TrackLink();
-            optionUp = new TrackLink();
+            optionDown = new Track();
+            optionUp = new Track();
             if(isGoingUp)
             {
                 Next = optionUp;
@@ -29,7 +29,7 @@ namespace GoldRush
 
         public void ChangeDirection()
         {
-            if(occupant !=null)
+            if(Occupant !=null)
             {
                 return;
             }

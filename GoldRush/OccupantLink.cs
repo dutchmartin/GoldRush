@@ -5,8 +5,8 @@ using System.Text;
 
 namespace GoldRush
 {
-    public abstract class Link
+    public interface OccupantLink<T> : HasNext
     {
-        public Link Next;
+        T Occupant { get; set; }
     }
 }

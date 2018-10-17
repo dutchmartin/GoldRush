@@ -3,43 +3,29 @@
   <Class Name="GoldRush.Board" Collapsed="true">
     <Position X="3.25" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAgAAABAAAAAAACAAAACAAAAAAAABAA=</HashCode>
+      <HashCode>ABAAAAAAAAAAAAgAAAAAAAAAAACAAAACAAAAAAAABAA=</HashCode>
       <FileName>Board.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.BoardFactory" Collapsed="true">
-    <Position X="3.25" Y="6" Width="1.5" />
-    <NestedTypes>
-      <Struct Name="GoldRush.BoardFactory.Location" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>GameConstruction\BoardFactory.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Struct>
-    </NestedTypes>
+    <Position X="3.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAABgEIAAAAAAAAEUAABAAAAAAACQAAAABAAAAA=</HashCode>
+      <HashCode>AAAQAAKBgEAQAAAAAAAEVAABAAAAAAACQAAAABAAAIA=</HashCode>
       <FileName>GameConstruction\BoardFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GoldRush.Cart" Collapsed="true">
+  <Class Name="GoldRush.Cart">
     <Position X="3.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAgAAAAAAABAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Cart.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GoldRush.Hangar" Collapsed="true">
-    <Position X="6.5" Y="8.25" Width="1.5" />
+  <Class Name="GoldRush.Hangar">
+    <Position X="3" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAAAAAAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ACAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Hangar.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="GoldRush.Link" Collapsed="true">
-    <Position X="7" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Link.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.MoveableObject" Collapsed="true">
@@ -49,33 +35,27 @@
       <FileName>MoveableObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GoldRush.River" Collapsed="true">
-    <Position X="10" Y="8.25" Width="1.5" />
+  <Class Name="GoldRush.River">
+    <Position X="11.25" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>River.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GoldRush.Ship" Collapsed="true">
+  <Class Name="GoldRush.Ship">
     <Position X="1" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAgAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Ship.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GoldRush.Track" Collapsed="true">
-    <Position X="6.5" Y="7.5" Width="1.5" />
+  <Class Name="GoldRush.Track">
+    <Position X="5.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAQAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
       <FileName>Track.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="GoldRush.TrackLink" Collapsed="true">
-    <Position X="5.5" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
-      <FileName>TrackLink.cs</FileName>
-    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="GoldRush.TrackLinkFactory" Collapsed="true">
     <Position X="3.25" Y="7" Width="1.5" />
@@ -84,47 +64,62 @@
       <FileName>GameConstruction\TrackLinkFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GoldRush.Turnout" Collapsed="true">
-    <Position X="6.75" Y="4.75" Width="1.5" />
+  <Class Name="GoldRush.Turnout">
+    <Position X="6.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAEAAAAIAAAAAAAAAAAAAAAAAAQAABAA=</HashCode>
       <FileName>Turnout.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GoldRush.Turnout1to2" Collapsed="true">
-    <Position X="7.75" Y="6.5" Width="1.5" />
+  <Class Name="GoldRush.Turnout1to2">
+    <Position X="7.75" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Turnout1to2.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GoldRush.Turnout2To1" Collapsed="true">
-    <Position X="5.5" Y="6.5" Width="1.5" />
+  <Class Name="GoldRush.Turnout2To1">
+    <Position X="5.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Turnout2To1.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GoldRush.WaterLink" Collapsed="true">
-    <Position X="10" Y="3.25" Width="1.5" />
+  <Class Name="GoldRush.WaterLink">
+    <Position X="9.25" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
       <FileName>WaterLink.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="GoldRush.WaterQuay" Collapsed="true">
-    <Position X="10" Y="4.75" Width="1.5" />
+  <Class Name="GoldRush.WaterQuay">
+    <Position X="8.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>WaterQuay.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GoldRush.Yard" Collapsed="true">
-    <Position X="4.5" Y="4.75" Width="1.5" />
+  <Class Name="GoldRush.Yard">
+    <Position X="5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Yard.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Interface Name="GoldRush.HasNext">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HasNext.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GoldRush.OccupantLink&lt;T&gt;" Collapsed="true">
+    <Position X="7.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>OccupantLink.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
