@@ -22,33 +22,37 @@ namespace GoldRush
 
         public void Play()
         {
-            #region 
+            #region
             /* START Test program */
             Console.WriteLine("Startgame");
             /* END */
             #endregion
 
-            timer = new Timer(1000);
+            timer = new Timer(10000);
             timer.Elapsed += OnTimedEvent;
             timer.Enabled = true;
-            board = new Board(0, null, new List<Hangar>(), new HashSet<Turnout>());
+            board = new Board(0, null, new List<Hangar>(), new Dictionary<char, Turnout>());
             AmountOfCarts = 1;
             while(timer.Enabled)
             {
-                Console.ReadKey();
+                ChangeOrientation(InputMapper.GetInputTurnoutNumber());
                 //TODO keylistning
             }
+        }
+
+        public void ChangeOrientation(int i)
+        {
         }
 
         public void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
             //Tel het aantal intervallen met elkaar op en verklein het interval daarmee
             timer.Enabled = false;
-            board.MoveShips();
-            board.MoveCarts();
-            board.HasAddedACart(AmountOfCarts);
-            board.HasAddedAShip();
-            board.KeepScore();
+            // board.MoveShips();
+            // board.MoveCarts();
+            // board.HasAddedACart(AmountOfCarts);
+            // board.HasAddedAShip();
+            // board.KeepScore();
             timer.Enabled = true;
             Console.WriteLine("Timer executes");
             //Render het board

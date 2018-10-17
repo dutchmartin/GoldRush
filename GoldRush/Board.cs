@@ -17,9 +17,9 @@ namespace GoldRush
         public List<Ship> Ships { get; private set; }
         public List<Hangar> Hangars { get; private set; }
         public List<Cart> Carts { get; private set; }
-        public HashSet<Turnout> Turnouts { get; private set; }
+        public Dictionary<char, Turnout> Turnouts { get; private set; }
 
-        public Board(int score, Track TrackEnd, List<Hangar> hangars, HashSet<Turnout> turnouts)
+        public Board(int score, Track TrackEnd, List<Hangar> hangars, Dictionary<char, Turnout> turnouts)
         {
             Score = score;
             TrackEnd = TrackEnd;

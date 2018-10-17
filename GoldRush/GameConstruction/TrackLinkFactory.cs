@@ -35,10 +35,10 @@ namespace GoldRush
                     return new Track(Direction.DOWN);
                 case 's':
                 case '᚜':
-                    return new Turnout1to2(null, false);
+                    return new Turnout1To2();
                 case 'S':
                 case '᚛':
-                    return new Turnout2To1(false, null, null);
+                    return new Turnout2To1();
                 case '~':
                     return new WaterLink();
                 default:

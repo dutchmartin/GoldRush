@@ -24,8 +24,7 @@ namespace GoldRush.GameConstruction
         public Board BuildBoard()
         {
             LayLinks();
-            //return new Board();
-            return null;
+            return new Board(0, TrackEnd, Hangars, Turnouts);
         }
 
         public void LayLinks()
@@ -60,7 +59,7 @@ namespace GoldRush.GameConstruction
                                 yard.Next = _hasNexts[y][x - 1];
                             }
                             continue;
-                        case Turnout1to2 turnout1To2:
+                        case Turnout1To2 turnout1To2:
                             // Look up and down.
                             LinkTurnout(turnout1To2, y, x);
                             // Look left
