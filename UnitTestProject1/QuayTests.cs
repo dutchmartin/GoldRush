@@ -9,9 +9,9 @@ namespace UnitTestProject1
     {
         Hangar hangar;
         Cart cart1;
-        TrackLink secondTrack;
-        TrackLink quayTrack;
-        TrackLink fourthTrack;
+        Track secondTrack;
+        Track quayTrack;
+        Track fourthTrack;
         WaterQuay quay;
 
         WaterLink water1;
@@ -23,9 +23,9 @@ namespace UnitTestProject1
         public void Initialize()
         {
             hangar = new Hangar();
-            secondTrack = new TrackLink();
-            quayTrack = new TrackLink();
-            fourthTrack = new TrackLink();
+            secondTrack = new Track();
+            quayTrack = new Track();
+            fourthTrack = new Track();
             water1 = new WaterLink();
             water2 = new WaterLink();
             water4 = new WaterLink();
@@ -37,7 +37,7 @@ namespace UnitTestProject1
             water2.Next = quay;
             quay.Next = water4;
 
-            hangar.track.First.Next = secondTrack;
+            hangar.Next = secondTrack;
             secondTrack.Next = quayTrack;
             quayTrack.Next = fourthTrack;
         }

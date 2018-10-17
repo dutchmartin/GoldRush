@@ -10,8 +10,8 @@ namespace UnitTestProject1
     {
         Hangar hangar;
         List<Cart> carts;
-        TrackLink second;
-        TrackLink third;
+        Track second;
+        Track third;
         Cart cart1;
         Cart cart2;
         Yard yard1;
@@ -21,21 +21,20 @@ namespace UnitTestProject1
         {
             hangar = new Hangar();
             carts = new List<Cart>();
-            second = new TrackLink();
-            third = new TrackLink();
+            second = new Track();
+            third = new Track();
             yard1 = new Yard();
             yard2 = new Yard();
 
-            hangar.track.First.Next = second;
+            hangar.Next = second;
             second.Next = third;
         }
 
         [TestMethod]
         public void AddCartToHangarTrackGetsPlacedInFirstItem()
         {
-            Track track = hangar.track;
             carts.Add(hangar.AddCart());    
-            Assert.IsNotNull(track.First.occupant);
+            Assert.IsNotNull(hangar.occupant);
             Assert.AreEqual(carts.Count, 1);
         }
 
@@ -43,13 +42,13 @@ namespace UnitTestProject1
         public void CanMoveReturnsCorrectValue()
         {
             hangar.AddCart();
-            cart1 = (Cart) hangar.track.First.occupant;
+            cart1 = (Cart) hangar.occupant;
             Assert.IsTrue(cart1.canMove());
         }
         [TestMethod]
         public void NewHangarTrackIsEmpty()
         {
-            Assert.IsNull(hangar.track.First.occupant);
+            Assert.IsNull(hangar.occupant);
         }
 
         [TestMethod]
@@ -64,7 +63,7 @@ namespace UnitTestProject1
         {
             cart1 = hangar.AddCart();
             cart1.Move();
-            Assert.IsNull(hangar.track.First.occupant);
+            Assert.IsNull(hangar.occupant);
             Assert.IsNotNull(second.occupant);
         }
         [TestMethod]
@@ -75,7 +74,7 @@ namespace UnitTestProject1
             cart1.hasMoved = false;
             cart2 = hangar.AddCart();
             cart2.Move();
-            Assert.IsNull(hangar.track.First.occupant);
+            Assert.IsNull(hangar.occupant);
             Assert.IsNotNull(second.occupant);
             Assert.IsNotNull(third.occupant);
         }
