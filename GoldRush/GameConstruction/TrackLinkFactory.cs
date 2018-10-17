@@ -28,9 +28,9 @@ namespace GoldRush
                 //case 'ᚓ':
                     //return new TrackLink();
                 case '᚜':
-                    return new Turnout1to2(null, false);
+                    return new Turnout1To2();
                 case '᚛':
-                    return new Turnout2To1(false, null, null );
+                    return new Turnout2To1();
                 default:
                     return new object();
             }
