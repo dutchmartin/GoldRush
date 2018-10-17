@@ -7,29 +7,22 @@
       <FileName>Board.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GoldRush.BoardFactory" Collapsed="true">
-    <Position X="3.25" Y="8.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAQAAKBgEAQAAAAAAAEVAABAAAAAAACQAAAABAAAIA=</HashCode>
-      <FileName>GameConstruction\BoardFactory.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="GoldRush.Cart">
-    <Position X="3.5" Y="2.25" Width="1.5" />
+    <Position X="9.5" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAgAAAAAAABAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Cart.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.Hangar">
-    <Position X="3" Y="4.75" Width="1.5" />
+    <Position X="3" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Hangar.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GoldRush.MoveableObject" Collapsed="true">
-    <Position X="2.25" Y="1" Width="1.5" />
+  <Class Name="GoldRush.MoveableObject">
+    <Position X="10.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAgAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MoveableObject.cs</FileName>
@@ -43,24 +36,24 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.Ship">
-    <Position X="1" Y="2.25" Width="1.5" />
+    <Position X="11.5" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAgAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Ship.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.Track">
-    <Position X="5.75" Y="3" Width="1.5" />
+    <Position X="5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <HashCode>AgAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
       <FileName>Track.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="GoldRush.TrackLinkFactory" Collapsed="true">
+  <Class Name="GoldRush.HasNextFactory" Collapsed="true">
     <Position X="3.25" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAQAAAABAAAAA=</HashCode>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAQAAAABAAAAA=</HashCode>
       <FileName>GameConstruction\TrackLinkFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -121,5 +114,12 @@
       <FileName>OccupantLink.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Enum Name="GoldRush.Direction">
+    <Position X="3.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAICAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Direction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
