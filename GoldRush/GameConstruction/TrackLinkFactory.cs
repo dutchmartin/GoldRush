@@ -5,15 +5,15 @@ using System.Text;
 
 namespace GoldRush
 {
-    public sealed class TrackLinkFactory
+    public sealed class HasNextFactory
     {
         // Create a singleton using the .net Lazy object.
-        private static readonly Lazy<TrackLinkFactory> lazy =
-        new Lazy<TrackLinkFactory>(() => new TrackLinkFactory());
+        private static readonly Lazy<HasNextFactory> lazy =
+        new Lazy<HasNextFactory>(() => new HasNextFactory());
 
-        public static TrackLinkFactory Instance { get { return lazy.Value; } }
+        public static HasNextFactory Instance { get { return lazy.Value; } }
 
-        public Object GetTrackLink(char linkChar)
+        public HasNext GetHasNext(char linkChar)
         {
             switch (linkChar)
             {
@@ -21,18 +21,28 @@ namespace GoldRush
                     return new Hangar();
                 //case 'ա':
                 //    return new Cart();
-                //case '֍':
-               //     return new Quay();
+                case '֍':
+                   return new WaterQuay( null );
                 case '۝':
                     return new Yard();
-                //case 'ᚓ':
-                    //return new TrackLink();
+                case '>':
+                    return new Track(Direction.RIGHT);
+                case '^':
+                    return new Track(Direction.UP);
+                case '<':
+                    return new Track(Direction.LEFT);
+                case '⌄':
+                    return new Track(Direction.DOWN);
+                case 's':
                 case '᚜':
-                    return new Turnout1To2();
+                    return new Turnout1to2(null, false);
+                case 'S':
                 case '᚛':
-                    return new Turnout2To1();
+                    return new Turnout2To1(false, null, null);
+                case '~':
+                    return new WaterLink();
                 default:
-                    return new object();
+                    return null;
             }
         }
     }

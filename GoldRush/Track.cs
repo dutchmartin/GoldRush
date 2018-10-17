@@ -9,5 +9,12 @@ namespace GoldRush
     {
         public Cart Occupant { get; set; }
         public HasNext Next { get; set; }
+        public Direction Direction { get; private set; } = Direction.NONE;
+
+        public Track(Direction d)
+        {
+            Direction = d;
+        }
+        public Track() { }
     }
 }
