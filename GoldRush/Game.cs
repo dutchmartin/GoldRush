@@ -31,7 +31,7 @@ namespace GoldRush
             timer = new Timer(1000);
             timer.Elapsed += OnTimedEvent;
             timer.Enabled = true;
-            board = new Board(0, null, new List<Hangar>(), new Dictionary<char, Turnout>());
+            board = new Board(0, null, new List<Hangar>(), new Dictionary<char, Turnout>(), null);
             AmountOfCarts = 1;
             while(timer.Enabled)
             {

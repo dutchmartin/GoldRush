@@ -43,7 +43,7 @@ namespace UnitTestProject1
             turnouts.Add('a', turnout1);
             turnouts.Add('b', turnout2);
 
-            board = new Board(0, null, hangars, turnouts);
+            board = new Board(0, null, hangars, turnouts, null);
             board.FirstRiver.Next = river2;
             river2.Next = quay;
             quay.Next = river4;

@@ -49,7 +49,6 @@
     <Compile Include="Direction.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameConstruction\BoardBuilder.cs" />
-    <Compile Include="GameConstruction\BoardFactory.cs" />
     <Compile Include="GameConstruction\HasNext2DArrayFactory.cs" />
     <Compile Include="Hangar.cs" />
     <Compile Include="HasNext.cs" />

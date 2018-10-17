@@ -22,6 +22,7 @@ namespace GoldRush
         public Board(int score, Track TrackEnd, List<Hangar> hangars, Dictionary<char, Turnout> turnouts, WaterQuay quay)
         {
             Score = score;
+            this.quay = quay;
             TrackEnd = TrackEnd;
             Hangars = hangars;
             Turnouts = turnouts;

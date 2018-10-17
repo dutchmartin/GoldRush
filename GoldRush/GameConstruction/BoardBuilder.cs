@@ -75,11 +75,11 @@ namespace GoldRush.GameConstruction
                                 turnout2To1.Next = _hasNexts[y][x - 1];
                             }
                             continue;
-                        case WaterQuay quay:
+                        case WaterQuay waterQuay:
                             //Look left
-                            AddNext<WaterLink>(quay, y, x-1);
+                            AddNext<WaterLink>(waterQuay, y, x-1);
                             //Lood down
-                            quay.track = (Track)_hasNexts[y-1][x];
+                            waterQuay.track = (Track)_hasNexts[y-1][x];
                             this.quay = quay;
                             continue;
                         case WaterLink waterLink when waterLink.GetType() == typeof(WaterLink):
