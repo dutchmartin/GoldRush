@@ -7,7 +7,7 @@ namespace GoldRush
 {
     public class Track : OccupantLink<Cart>
     {
-        public Cart Occupant { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public HasNext Next { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Cart Occupant { get; set; }
+        public HasNext Next { get; set; }
     }
 }

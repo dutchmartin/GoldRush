@@ -25,8 +25,8 @@ namespace GoldRush
                //     return new Quay();
                 case '۝':
                     return new Yard();
-                case 'ᚓ':
-                    return new TrackLink();
+                //case 'ᚓ':
+                    //return new TrackLink();
                 case '᚜':
                     return new Turnout1to2(null, false);
                 case '᚛':

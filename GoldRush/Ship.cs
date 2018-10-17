@@ -33,7 +33,7 @@ namespace GoldRush
             else
             {
                 WaterLink nextWaterLink = (WaterLink)location.Next;
-                if(nextWaterLink.ship == null)
+                if(nextWaterLink.Occupant == null)
                 {  
                     return true;
                 }
@@ -51,9 +51,9 @@ namespace GoldRush
         {
             if(canMove())
             {
-                location.ship = null;
+                location.Occupant = null;
                 this.location = (WaterLink) location.Next;
-                location.ship = this;
+                location.Occupant = this;
             }
         }
     }

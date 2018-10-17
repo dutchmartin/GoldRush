@@ -50,12 +50,12 @@ namespace GoldRush
         {
             var level = GetLevelMatrix();
             Object[][] LevelObjectMap = new object[level.Length][];
-            TrackFactory factory = TrackFactory.Instance;
+            //TrackFactory factory = TrackFactory.Instance;
             for (int i = 0; i < level.Length; i++)
             {
-                LevelObjectMap[i] = level[i]
-                    .Select(LevelObject => factory.GetTrack(LevelObject))
-                    .ToArray();
+                //LevelObjectMap[i] = level[i]
+                //    .Select(LevelObject => factory.GetTrack(LevelObject))
+                //    .ToArray();
             }
             return LevelObjectMap;
         }

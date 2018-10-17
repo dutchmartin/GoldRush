@@ -32,7 +32,7 @@ namespace UnitTestProject1
             quay = new WaterQuay(quayTrack);
             ship = new Ship(water1);
 
-            water1.ship = ship;
+            water1.Occupant = ship;
             water1.Next = water2;
             water2.Next = quay;
             quay.Next = water4;
@@ -49,7 +49,7 @@ namespace UnitTestProject1
             ship.Move();
             ship.Move();
             ship.Move();
-            Assert.AreEqual(quay.ship, ship);
+            Assert.AreEqual(quay.Occupant, ship);
         }
         [TestMethod]
         public void ShipGetsLoad()
@@ -68,34 +68,34 @@ namespace UnitTestProject1
         public void ShipLeavesWhenFullyLoaded()
         {
             ship.location = quay;
-            quayTrack.occupant = null;
+            quayTrack.Occupant = null;
             cart1 = new Cart(quayTrack);
             ship.Move();
-            quayTrack.occupant = null;
+            quayTrack.Occupant = null;
             cart1 = new Cart(quayTrack);
             ship.Move();
-            quayTrack.occupant = null;
+            quayTrack.Occupant = null;
             cart1 = new Cart(quayTrack);
             ship.Move();
-            quayTrack.occupant = null;
+            quayTrack.Occupant = null;
             cart1 = new Cart(quayTrack);
             ship.Move();
-            quayTrack.occupant = null;
+            quayTrack.Occupant = null;
             cart1 = new Cart(quayTrack);
             ship.Move();
-            quayTrack.occupant = null;
+            quayTrack.Occupant = null;
             cart1 = new Cart(quayTrack);
             ship.Move();
-            quayTrack.occupant = null;
+            quayTrack.Occupant = null;
             cart1 = new Cart(quayTrack);
             ship.Move();
-            quayTrack.occupant = null;
+            quayTrack.Occupant = null;
             cart1 = new Cart(quayTrack);
             ship.Move();
             
             Assert.AreEqual(ship.load,8);
-            Assert.IsNull(quay.ship);
-            Assert.IsNotNull(water4.ship);
+            Assert.IsNull(quay.Occupant);
+            Assert.IsNotNull(water4.Occupant);
         }
         [TestMethod]
         public void ShipWaitsOnOtherBoatToMove()
@@ -107,8 +107,8 @@ namespace UnitTestProject1
             ship2.Move();
             ship2.Move();
             ship2.Move();
-            Assert.AreEqual(water2.ship, ship2);
-            Assert.AreEqual(quay.ship, ship);
+            Assert.AreEqual(water2.Occupant, ship2);
+            Assert.AreEqual(quay.Occupant, ship);
         }
 
     }

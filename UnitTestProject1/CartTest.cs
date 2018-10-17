@@ -34,7 +34,7 @@ namespace UnitTestProject1
         public void AddCartToHangarTrackGetsPlacedInFirstItem()
         {
             carts.Add(hangar.AddCart());    
-            Assert.IsNotNull(hangar.occupant);
+            Assert.IsNotNull(hangar.Occupant);
             Assert.AreEqual(carts.Count, 1);
         }
 
@@ -42,13 +42,13 @@ namespace UnitTestProject1
         public void CanMoveReturnsCorrectValue()
         {
             hangar.AddCart();
-            cart1 = (Cart) hangar.occupant;
+            cart1 = (Cart) hangar.Occupant;
             Assert.IsTrue(cart1.canMove());
         }
         [TestMethod]
         public void NewHangarTrackIsEmpty()
         {
-            Assert.IsNull(hangar.occupant);
+            Assert.IsNull(hangar.Occupant);
         }
 
         [TestMethod]
@@ -63,8 +63,8 @@ namespace UnitTestProject1
         {
             cart1 = hangar.AddCart();
             cart1.Move();
-            Assert.IsNull(hangar.occupant);
-            Assert.IsNotNull(second.occupant);
+            Assert.IsNull(hangar.Occupant);
+            Assert.IsNotNull(second.Occupant);
         }
         [TestMethod]
         public void TwoCloseCartsMoveWithoutCollision()
@@ -74,9 +74,9 @@ namespace UnitTestProject1
             cart1.hasMoved = false;
             cart2 = hangar.AddCart();
             cart2.Move();
-            Assert.IsNull(hangar.occupant);
-            Assert.IsNotNull(second.occupant);
-            Assert.IsNotNull(third.occupant);
+            Assert.IsNull(hangar.Occupant);
+            Assert.IsNotNull(second.Occupant);
+            Assert.IsNotNull(third.Occupant);
         }
         [TestMethod]
         public void CartDoesntMoveIfNextSpaceIsNull()
@@ -88,7 +88,7 @@ namespace UnitTestProject1
             cart1.hasMoved = false;
             cart1.Move();
             cart1.hasMoved = false;
-            Assert.IsNotNull(third.occupant);
+            Assert.IsNotNull(third.Occupant);
         }
         [TestMethod]
         public void CartDoestnCrashOnYard()
@@ -123,8 +123,8 @@ namespace UnitTestProject1
             cart2.Move();
             cart1.hasMoved = false;
             cart2.hasMoved = false;
-            Assert.AreEqual(yard1.occupant, cart2);
-            Assert.AreEqual(yard2.occupant, cart1);
+            Assert.AreEqual(yard1.Occupant, cart2);
+            Assert.AreEqual(yard2.Occupant, cart1);
         }
         [TestMethod]
         [ExpectedException (typeof(CartCrashException))]
