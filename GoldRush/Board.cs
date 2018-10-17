@@ -9,28 +9,31 @@ namespace GoldRush
     public class Board
     {
         private Random random;
+        public WaterQuay quay { get; set; }
         public int Score { get; private set; }
-        public River river { get; set; }
-        public List<Ship> Ships { get; private set; }
+        public River FirstRiver { get; set; }
 
         public Track TrackEnd { get; private set; }
+        public List<Ship> Ships { get; private set; }
         public List<Hangar> Hangars { get; private set; }
         public List<Cart> Carts { get; private set; }
         public HashSet<Turnout> Turnouts { get; private set; }
 
         public Board(int score, Track TrackEnd, List<Hangar> hangars, HashSet<Turnout> turnouts)
         {
-            random = new Random();
             Score = score;
             TrackEnd = TrackEnd;
-            Carts = new List<Cart>();
             Hangars = hangars;
             Turnouts = turnouts;
-            river = new River();
-            river.Occupant = new Ship(river);
+            random = new Random();
+            Carts = new List<Cart>();
+            Ships = new List<Ship>();
+            FirstRiver = new River();
+            FirstRiver.Occupant = new Ship(FirstRiver);
+            Ships.Add(FirstRiver.Occupant);
         }
 
-        public bool AddCarts(int amount)
+        public bool HasAddedACart(int amount)
         {
             if(amount > Hangars.Count)
             {
@@ -49,18 +52,18 @@ namespace GoldRush
             }
             return true;
         }
-        public bool AddShip()
+        public bool HasAddedAShip()
         {
-            if(river.Occupant != null)
+            if(FirstRiver.Occupant != null)
             {
                 return false;
             }
-            if(random.Next(1, 10) != 1)
+            if(random.Next(1, 10) ==1)
             {
-                return false;
+                FirstRiver.Occupant = new Ship(FirstRiver);
+                return true;
             }
-            river.Occupant = new Ship(river);
-            return true;
+            return false;
         }
         public void MoveCarts()
         {
@@ -69,6 +72,18 @@ namespace GoldRush
         public void MoveShips()
         {
             Ships.ForEach(s => s.Move());
+        }
+
+        public void KeepScore()
+        {
+            if(quay.Occupant.isLoaded)
+            {
+                Score += 10;
+            }
+            if(!quay.track.Occupant.isLoaded)
+            {
+                Score += 1;
+            }
         }
     }
 }
