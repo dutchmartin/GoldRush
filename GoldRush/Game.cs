@@ -28,7 +28,7 @@ namespace GoldRush
             /* END */
             #endregion
 
-            timer = new Timer(10000);
+            timer = new Timer(1000);
             timer.Elapsed += OnTimedEvent;
             timer.Enabled = true;
             board = new Board(0, null, new List<Hangar>(), new Dictionary<char, Turnout>());
@@ -48,11 +48,11 @@ namespace GoldRush
         {
             //Tel het aantal intervallen met elkaar op en verklein het interval daarmee
             timer.Enabled = false;
-            // board.MoveShips();
-            // board.MoveCarts();
-            // board.HasAddedACart(AmountOfCarts);
-            // board.HasAddedAShip();
-            // board.KeepScore();
+            board.MoveShips();
+            board.MoveCarts();
+            board.HasAddedACart(AmountOfCarts);
+            board.HasAddedAShip();
+            board.KeepScore();
             timer.Enabled = true;
             Console.WriteLine("Timer executes");
             //Render het board

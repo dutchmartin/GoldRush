@@ -77,6 +77,10 @@ namespace GoldRush
 
         public void KeepScore()
         {
+            if(quay.Occupant == null)
+            {
+                return;
+            }
             if(quay.Occupant.isLoaded)
             {
                 Score += 10;
