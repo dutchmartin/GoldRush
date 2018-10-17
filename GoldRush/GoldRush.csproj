@@ -67,7 +67,7 @@
     <Compile Include="River.cs" />
     <Compile Include="Ship.cs" />
     <Compile Include="Track.cs" />
-    <Compile Include="GameConstruction\TrackLinkFactory.cs" />
+    <Compile Include="GameConstruction\HasLinkFactory.cs" />
     <Compile Include="Turnout.cs" />
     <Compile Include="Turnout1To2.cs" />
     <Compile Include="Turnout2To1.cs" />
