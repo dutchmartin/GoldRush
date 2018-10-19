@@ -27,13 +27,13 @@ namespace UnitTestProject1
              Q
             -Q- - H        */
             water1 = new WaterLink();
-            water2 = new WaterQuay(null);
+            water2 = new WaterQuay();
             water3 = new WaterLink();
             hangar = new Hangar();
             link2 = new Track();
             link3 = new Track();
             link4 = new Track();
-            quay = new WaterQuay(null);
+            quay = new WaterQuay();
             ship1 = new Ship(water1);
             water1.Next = quay;
             //quay.NextWater = water3;

@@ -29,7 +29,8 @@ namespace UnitTestProject1
             water1 = new WaterLink();
             water2 = new WaterLink();
             water4 = new WaterLink();
-            quay = new WaterQuay(quayTrack);
+            quay = new WaterQuay();
+            quay.track = quayTrack;
             ship = new Ship(water1);
 
             water1.Occupant = ship;

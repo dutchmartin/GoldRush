@@ -9,6 +9,7 @@ namespace GoldRush
 {
     public class Board
     {
+        private int amountOfCarts;
         private Random random;
         public WaterQuay quay { get; set; }
         public int Score { get; private set; }
@@ -35,15 +36,15 @@ namespace GoldRush
             Ships.Add(FirstRiver.Occupant);
         }
 
-        public bool HasAddedACart(int amount)
+        public bool HasAddedACart()
         {
-            if(amount > Hangars.Count)
+            if(amountOfCarts > Hangars.Count)
             {
                 return false;
             }
             Hangar ChosenHangar;
             Cart AddedCart = null;
-            for(int count = 0; count < amount; count++)
+            for(int count = 0; count < amountOfCarts; count++)
             {
                 while(AddedCart == null)
                 {
@@ -91,6 +92,23 @@ namespace GoldRush
             {
                 Score += 1;
             }
+        }
+
+        public double GetTimeInterval()
+        {
+            double result = 10000;
+            for(int i = Score%10; i > 0; i--)
+            {
+                result -= 100;
+            }
+            return result;
+        }
+
+        public void AdjustAmountOfCarts()
+        {
+            amountOfCarts = Score%50;
+            if(amountOfCarts > Hangars.Count)
+                amountOfCarts = Hangars.Count;
         }
     }
 }

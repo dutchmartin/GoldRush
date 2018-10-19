@@ -27,7 +27,8 @@ namespace UnitTestProject1
             hangar1Track3 = new Track();
             Turnout1To2 turnout1 = new Turnout1To2();
             Turnout2To1 turnout2 = new Turnout2To1();
-            quay = new WaterQuay(hangar1Track2);
+            quay = new WaterQuay();
+            quay.track = hangar1Track2;
             river2 = new WaterLink();
             river4 = new WaterLink();
 
@@ -68,26 +69,28 @@ namespace UnitTestProject1
         [TestMethod]
         public void AddCartAddsOneCartToCarts()
         {
-            board.HasAddedACart(1);
+            board.HasAddedACart();
             Assert.AreEqual(board.Carts.Count, 1);
         }
         [TestMethod]
         public void AddingMultipleCartsAddsCorrectAmountOfCarts()
         {
-            board.HasAddedACart(2);
+            board.HasAddedACart();
+            board.HasAddedACart();
             Assert.AreEqual(board.Carts.Count, 2);
         }
         [TestMethod]
         public void AddingTooManyCartsWontWork()
         {
-            bool result = board.HasAddedACart(3);
+            bool result = board.HasAddedACart();
             Assert.AreEqual(board.Carts.Count, 0);
             Assert.IsFalse(result);
         }
         [TestMethod]
         public void AllCartsMove()
         {
-            board.HasAddedACart(2);
+            board.HasAddedACart();
+            board.HasAddedACart();
             board.MoveCarts();
             Assert.IsNull(board.Hangars[0].Occupant);
             Assert.IsNull(board.Hangars[1].Occupant);
@@ -97,7 +100,8 @@ namespace UnitTestProject1
         [TestMethod]
         public void CartsMoveCorrectly()
         {
-            board.HasAddedACart(2);
+            board.HasAddedACart();
+            board.HasAddedACart();
             board.MoveCarts();
             board.MoveCarts();
             Assert.IsNotNull(hangar1Track3);
@@ -107,9 +111,9 @@ namespace UnitTestProject1
         [ExpectedException (typeof(CartCrashException))]
         public void CartsCrash()
         {
-            board.HasAddedACart(2);
+            board.HasAddedACart();
             board.MoveCarts();
-            board.HasAddedACart(2);
+            board.HasAddedACart();
             board.MoveCarts();
         }
         [TestMethod]

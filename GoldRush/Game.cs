@@ -11,6 +11,7 @@ namespace GoldRush
     {
         public Board board {get; set;}
         private Timer timer;
+        private int timeinterval;
         private int AmountOfCarts;
         public Game()
         {
@@ -31,10 +32,9 @@ namespace GoldRush
             /* END */
             #endregion
 
-            timer = new Timer(1000);
+            timer = new Timer(10000);
             timer.Elapsed += OnTimedEvent;
             timer.Enabled = true;
-            AmountOfCarts = 1;
             while(timer.Enabled)
             {
                 ChangeOrientation(InputMapper.GetInputTurnoutNumber());
@@ -52,9 +52,11 @@ namespace GoldRush
             timer.Enabled = false;
             board.MoveShips();
             board.MoveCarts();
-            board.HasAddedACart(AmountOfCarts);
+            board.HasAddedACart();
             board.HasAddedAShip();
             board.KeepScore();
+            board.AdjustAmountOfCarts();
+            timer.Interval = board.GetTimeInterval();
             timer.Enabled = true;
             Console.WriteLine("Timer executes");
             //Render het board
