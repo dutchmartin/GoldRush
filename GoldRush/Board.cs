@@ -9,7 +9,7 @@ namespace GoldRush
 {
     public class Board
     {
-        private int amountOfCarts;
+        private int amountOfCarts = 1;
         private Random random;
         public WaterQuay quay { get; set; }
         public int Score { get; private set; }
@@ -106,7 +106,7 @@ namespace GoldRush
 
         public void AdjustAmountOfCarts()
         {
-            amountOfCarts = Score%50;
+            amountOfCarts += Score%50;
             if(amountOfCarts > Hangars.Count)
                 amountOfCarts = Hangars.Count;
         }

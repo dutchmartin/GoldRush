@@ -32,7 +32,7 @@ namespace GoldRush
             /* END */
             #endregion
 
-            timer = new Timer(10000);
+            timer = new Timer(1000);
             timer.Elapsed += OnTimedEvent;
             timer.Enabled = true;
             while(timer.Enabled)
@@ -59,6 +59,8 @@ namespace GoldRush
             timer.Interval = board.GetTimeInterval();
             timer.Enabled = true;
             Console.WriteLine("Timer executes");
+            Console.WriteLine(board.Carts.Count.ToString());
+            Console.WriteLine(board.Ships.Count.ToString());
             //Render het board
         }
 
