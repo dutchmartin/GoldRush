@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoldRush.GameConstruction;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,8 @@ namespace GoldRush
 
         public void Play()
         {
+            BoardBuilder builder = new BoardBuilder();
+            board = builder.BuildBoard();
             #region
             /* START Test program */
             Console.WriteLine("Startgame");
@@ -31,7 +34,6 @@ namespace GoldRush
             timer = new Timer(1000);
             timer.Elapsed += OnTimedEvent;
             timer.Enabled = true;
-            board = new Board(0, null, new List<Hangar>(), new Dictionary<char, Turnout>(), null);
             AmountOfCarts = 1;
             while(timer.Enabled)
             {

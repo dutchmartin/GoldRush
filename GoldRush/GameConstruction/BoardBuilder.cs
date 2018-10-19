@@ -79,8 +79,8 @@ namespace GoldRush.GameConstruction
                             //Look left
                             AddNext<WaterLink>(waterQuay, y, x-1);
                             //Lood down
-                            waterQuay.track = (Track)_hasNexts[y-1][x];
-                            this.quay = quay;
+                            waterQuay.track = (Track)_hasNexts[y+1][x];
+                            this.quay = waterQuay;
                             continue;
                         case WaterLink waterLink when waterLink.GetType() == typeof(WaterLink):
                             //Look left

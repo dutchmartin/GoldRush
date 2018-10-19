@@ -22,7 +22,7 @@ namespace GoldRush
                 //case 'ա':
                 //    return new Cart();
                 case '֍':
-                   return new WaterQuay( null );
+                   return new WaterQuay();
                 case '۝':
                     return new Yard();
                 case '>':
