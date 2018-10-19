@@ -13,6 +13,7 @@ namespace GoldRush.GameConstruction
 
         // Board Properties.
         public Track TrackEnd { get; private set; }
+        public WaterQuay quay {get; private set;}
         public List<Hangar> Hangars { get; private set; } = new List<Hangar>();
         public Dictionary<char,Turnout> Turnouts { get; private set; } = new Dictionary<char, Turnout>();
 
@@ -24,8 +25,7 @@ namespace GoldRush.GameConstruction
         public Board BuildBoard()
         {
             LayLinks();
-            //return new Board();
-            return null;
+            return new Board(0, TrackEnd, Hangars, Turnouts, quay);
         }
 
         public void LayLinks()
@@ -60,7 +60,7 @@ namespace GoldRush.GameConstruction
                                 yard.Next = _hasNexts[y][x - 1];
                             }
                             continue;
-                        case Turnout1to2 turnout1To2:
+                        case Turnout1To2 turnout1To2:
                             // Look up and down.
                             LinkTurnout(turnout1To2, y, x);
                             // Look left
@@ -74,6 +74,17 @@ namespace GoldRush.GameConstruction
                             {
                                 turnout2To1.Next = _hasNexts[y][x - 1];
                             }
+                            continue;
+                        case WaterQuay waterQuay:
+                            //Look left
+                            AddNext<WaterLink>(waterQuay, y, x-1);
+                            //Lood down
+                            waterQuay.track = (Track)_hasNexts[y+1][x];
+                            this.quay = waterQuay;
+                            continue;
+                        case WaterLink waterLink when waterLink.GetType() == typeof(WaterLink):
+                            //Look left
+                            AddNext<WaterLink>(waterLink, y, x-1);
                             continue;
                         case Track track when track.GetType() == typeof(Track):
                             LinkTracks(track, y, x);
@@ -91,12 +102,12 @@ namespace GoldRush.GameConstruction
         }
         private void LinkTurnout(Turnout turnout, int y, int x)
         {
-            // Look above for a Track.
+            // Look below for a Track.
             if (IsType<Track>(y + 1, x))
             {
-                turnout.optionUp = _hasNexts[y + 1][x] as Track;
+                turnout.optionDown = _hasNexts[y + 1][x] as Track;
             }
-            // Look above for a Track.
+            // Look below for a Track.
             if (IsType<Track>(y - 1, x))
             {
                 turnout.optionUp = _hasNexts[y - 1][x] as Track;

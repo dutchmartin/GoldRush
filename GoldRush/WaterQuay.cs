@@ -8,10 +8,5 @@ namespace GoldRush
     public class WaterQuay : WaterLink
     {
         public Track track;
-
-        public WaterQuay(Track track)
-        {
-            this.track = track;
-        }
     }
 }

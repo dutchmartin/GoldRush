@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoldRush.GameConstruction;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace GoldRush
     {
         public Board board {get; set;}
         private Timer timer;
+        private int timeinterval;
         private int AmountOfCarts;
         private View.ObserverList<IObserver<GameData>> ObserverList = new View.ObserverList<IObserver<GameData>>();
         public Game()
@@ -23,7 +25,9 @@ namespace GoldRush
 
         public void Play()
         {
-            #region 
+            BoardBuilder builder = new BoardBuilder();
+            board = builder.BuildBoard();
+            #region
             /* START Test program */
             Console.WriteLine("Startgame");
             /* END */
@@ -32,13 +36,15 @@ namespace GoldRush
             timer = new Timer(1000);
             timer.Elapsed += OnTimedEvent;
             timer.Enabled = true;
-            board = new Board(0, null, new List<Hangar>(), new HashSet<Turnout>());
-            AmountOfCarts = 1;
             while(timer.Enabled)
             {
-                Console.ReadKey();
+                ChangeOrientation(InputMapper.GetInputTurnoutNumber());
                 //TODO keylistning
             }
+        }
+
+        public void ChangeOrientation(int i)
+        {
         }
 
         public void OnTimedEvent(Object source, ElapsedEventArgs e)
@@ -47,11 +53,15 @@ namespace GoldRush
             timer.Enabled = false;
             board.MoveShips();
             board.MoveCarts();
-            board.HasAddedACart(AmountOfCarts);
+            board.HasAddedACart();
             board.HasAddedAShip();
             board.KeepScore();
+            board.AdjustAmountOfCarts();
+            timer.Interval = board.GetTimeInterval();
             timer.Enabled = true;
             Console.WriteLine("Timer executes");
+            Console.WriteLine(board.Carts.Count.ToString());
+            Console.WriteLine(board.Ships.Count.ToString());
             //Render het board
         }
 

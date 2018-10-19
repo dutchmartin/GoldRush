@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoldRush.GameConstruction;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace GoldRush
 {
     public class Board
     {
+        private int amountOfCarts = 1;
         private Random random;
         public WaterQuay quay { get; set; }
         public int Score { get; private set; }
@@ -17,11 +19,12 @@ namespace GoldRush
         public List<Ship> Ships { get; private set; }
         public List<Hangar> Hangars { get; private set; }
         public List<Cart> Carts { get; private set; }
-        public HashSet<Turnout> Turnouts { get; private set; }
+        public Dictionary<char, Turnout> Turnouts { get; private set; }
 
-        public Board(int score, Track TrackEnd, List<Hangar> hangars, HashSet<Turnout> turnouts)
+        public Board(int score, Track TrackEnd, List<Hangar> hangars, Dictionary<char, Turnout> turnouts, WaterQuay quay)
         {
             Score = score;
+            this.quay = quay;
             TrackEnd = TrackEnd;
             Hangars = hangars;
             Turnouts = turnouts;
@@ -33,15 +36,15 @@ namespace GoldRush
             Ships.Add(FirstRiver.Occupant);
         }
 
-        public bool HasAddedACart(int amount)
+        public bool HasAddedACart()
         {
-            if(amount > Hangars.Count)
+            if(amountOfCarts > Hangars.Count)
             {
                 return false;
             }
             Hangar ChosenHangar;
             Cart AddedCart = null;
-            for(int count = 0; count < amount; count++)
+            for(int count = 0; count < amountOfCarts; count++)
             {
                 while(AddedCart == null)
                 {
@@ -77,6 +80,10 @@ namespace GoldRush
 
         public void KeepScore()
         {
+            if(quay.Occupant == null)
+            {
+                return;
+            }
             if(quay.Occupant.isLoaded)
             {
                 Score += 10;
@@ -85,6 +92,23 @@ namespace GoldRush
             {
                 Score += 1;
             }
+        }
+
+        public double GetTimeInterval()
+        {
+            double result = 10000;
+            for(int i = Score%10; i > 0; i--)
+            {
+                result -= 100;
+            }
+            return result;
+        }
+
+        public void AdjustAmountOfCarts()
+        {
+            amountOfCarts += Score%50;
+            if(amountOfCarts > Hangars.Count)
+                amountOfCarts = Hangars.Count;
         }
     }
 }
