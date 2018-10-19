@@ -51,6 +51,7 @@
     <Compile Include="GameConstruction\BoardBuilder.cs" />
     <Compile Include="GameConstruction\BoardFactory.cs" />
     <Compile Include="GameConstruction\HasNext2DArrayFactory.cs" />
+    <Compile Include="GameData.cs" />
     <Compile Include="Hangar.cs" />
     <Compile Include="HasNext.cs" />
     <Compile Include="InputHandler.cs" />
@@ -71,6 +72,12 @@
     <Compile Include="Turnout.cs" />
     <Compile Include="Turnout1To2.cs" />
     <Compile Include="Turnout2To1.cs" />
+    <Compile Include="View\IRenderable.cs" />
+    <Compile Include="View\IViewModel.cs" />
+    <Compile Include="View\MainView.cs" />
+    <Compile Include="View\MainViewViewModel.cs" />
+    <Compile Include="View\ObserverList.cs" />
+    <Compile Include="View\ViewStringsFactory.cs" />
     <Compile Include="WaterLink.cs" />
     <Compile Include="WaterQuay.cs" />
     <Compile Include="Yard.cs" />

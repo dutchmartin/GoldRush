@@ -6,11 +6,12 @@ using System.Timers;
 
 namespace GoldRush
 {
-    public class Game
+    public class Game : IObservable<GameData>
     {
         public Board board {get; set;}
         private Timer timer;
         private int AmountOfCarts;
+        private View.ObserverList<IObserver<GameData>> ObserverList = new View.ObserverList<IObserver<GameData>>();
         public Game()
         {
             /* Get a board and get its hangars */
@@ -58,5 +59,12 @@ namespace GoldRush
         {
             /* Logica voor het resetten van de timer */
         }
+
+        public IDisposable Subscribe(IObserver<GameData> observer)
+        {
+            ObserverList.Add(observer);
+            return ObserverList;
+        }
+        private 
     }
 }
