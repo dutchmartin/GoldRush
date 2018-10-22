@@ -22,13 +22,11 @@ namespace GoldRush
             {
                 isGoingUp = false;
                 Next = optionDown;
-                optionUp.Next = null;
             }
             else
             {
                 isGoingUp = true;
                 Next = optionUp;
-                optionDown.Next = null;
             }
         }
     }
