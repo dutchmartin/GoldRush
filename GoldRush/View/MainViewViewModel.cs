@@ -8,7 +8,7 @@ namespace GoldRush.View
 {
     class MainViewViewModel : IViewModel<MainView>, IObserver<GameData>
     {
-        public MainView View { get; private set; }
+        public MainView View { get; private set; } = new MainView();
         private ViewStringsFactory _viewStringsFactory = ViewStringsFactory.Instance;
 
         public void OnCompleted()
@@ -20,7 +20,6 @@ namespace GoldRush.View
         {
             Console.WriteLine(error);
         }
-        
 
         public void OnNext(GameData value)
         {

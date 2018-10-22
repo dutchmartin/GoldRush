@@ -14,5 +14,6 @@ namespace GoldRush
         public Track previous {get; set;}
         public Track optionUp {get; set;}
         public Track optionDown{get; set;}
+        public abstract void ChangeDirection();
     }
 }

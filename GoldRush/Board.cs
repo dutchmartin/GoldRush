@@ -21,7 +21,9 @@ namespace GoldRush
         public List<Cart> Carts { get; private set; }
         public Dictionary<char, Turnout> Turnouts { get; private set; }
 
-        public Board(int score, Track TrackEnd, List<Hangar> hangars, Dictionary<char, Turnout> turnouts, WaterQuay quay)
+        private HasNext[][] _GameBoard;
+
+        public Board(int score, Track TrackEnd, List<Hangar> hangars, Dictionary<char, Turnout> turnouts, WaterQuay quay, HasNext[][] GameBoard)
         {
             Score = score;
             this.quay = quay;
@@ -34,6 +36,7 @@ namespace GoldRush
             FirstRiver = new River();
             FirstRiver.Occupant = new Ship(FirstRiver);
             Ships.Add(FirstRiver.Occupant);
+            _GameBoard = GameBoard;
         }
 
         public bool HasAddedACart()
@@ -109,6 +112,18 @@ namespace GoldRush
             amountOfCarts += Score%50;
             if(amountOfCarts > Hangars.Count)
                 amountOfCarts = Hangars.Count;
+        }
+
+        public HasNext[][] GetGameBoard()
+        {
+            return _GameBoard;
+        }
+        public void ToggleTurnout(Char c)
+        {
+            if(this.Turnouts.TryGetValue(c, out Turnout t))
+            {
+                t.ChangeDirection();
+            }
         }
     }
 }

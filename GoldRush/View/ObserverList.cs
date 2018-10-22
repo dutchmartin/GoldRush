@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GoldRush.View
 {
-    public sealed class ObserverList<T> : IDisposable where T : IObserver<T>
+    public sealed class ObserverList<T, G> : IDisposable where T : IObserver<G>
     {
         private List<T> _Observers { get; set; }
 
@@ -16,11 +16,14 @@ namespace GoldRush.View
         }
         public void Dispose()
         {
-            _Observers.RemoveAll(item => true);
+           _Observers.RemoveAll(item => true);
         }
-        public void Add(T item) => _Observers.Add(item);
+        public void Add(T item)
+        {
+            _Observers.Add(item);
+        }
 
-        public void NotifyObservers(T NewData)
+        public void NotifyObservers(G NewData)
         {
             _Observers.ForEach(item => item.OnNext(NewData));
         }

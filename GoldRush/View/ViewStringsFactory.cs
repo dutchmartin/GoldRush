@@ -26,7 +26,7 @@ namespace GoldRush.View
                         {
                             return (char)track.Direction;
                         }
-                        return 'ա';
+                        return '\x00D7';
                     }
                     // Get the chars of special items.
                     return GetDisplayItem(track);
@@ -45,7 +45,7 @@ namespace GoldRush.View
                 case Turnout turnout:
                     return (turnout.isGoingUp) ? '/' : '\\' ;
                 case Yard yard:
-                    return '۝';
+                    return '\x00AB';// '۝';
                 case Hangar hangar:
                     return 'Ξ';
                 default:

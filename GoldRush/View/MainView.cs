@@ -40,7 +40,9 @@ namespace GoldRush.View
             // TODO: Can be refactored to a file read.
             Console.Write(
                 "###################\n" +
-                " Type x to do y\n" 
+                " Use Q W E R T to\n" +
+                " Change the carts path\n"
+                
                 );
         }
     }

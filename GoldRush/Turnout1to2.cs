@@ -12,7 +12,7 @@ namespace GoldRush
         Dit maakt het onderscheid tussen 1to2 en 2to1 duidelijker
          */
 
-        public void ChangeDirection()
+        public override void ChangeDirection()
         {
             if(Occupant !=null)
             {

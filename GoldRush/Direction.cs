@@ -8,7 +8,7 @@ namespace GoldRush
     public enum Direction
     {
         UP = '^',
-        DOWN = '⌄',
+        DOWN = 'v',
         LEFT = '<', 
         RIGHT = '>',
         NONE = ' '

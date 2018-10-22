@@ -25,7 +25,7 @@ namespace GoldRush.GameConstruction
         public Board BuildBoard()
         {
             LayLinks();
-            return new Board(0, TrackEnd, Hangars, Turnouts, quay);
+            return new Board(0, TrackEnd, Hangars, Turnouts, quay, _hasNexts);
         }
 
         public void LayLinks()
