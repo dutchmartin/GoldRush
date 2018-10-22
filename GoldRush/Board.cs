@@ -51,7 +51,7 @@ namespace GoldRush
             {
                 while(AddedCart == null)
                 {
-                    ChosenHangar = Hangars[random.Next(1, Hangars.Count)];
+                    ChosenHangar = Hangars[random.Next(0, 1)];
                     AddedCart = ChosenHangar.AddCart();
                 }
                 Carts.Add(AddedCart);
@@ -64,7 +64,7 @@ namespace GoldRush
             {
                 return false;
             }
-            if(random.Next(1, 10) ==1)
+            if(random.Next(1, 2) ==1)
             {
                 FirstRiver.Occupant = new Ship(FirstRiver);
                 return true;

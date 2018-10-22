@@ -18,12 +18,16 @@ namespace GoldRush
             if (isGoingUp)
             {
                 isGoingUp = false;
-                previous = optionDown;
+                previous = optionUp;
+                previous.Next = this;
+                optionDown.Next = null;
             }
             else
             {
                 isGoingUp = true;
-                previous = optionUp;
+                previous = optionDown;
+                previous.Next = this;
+                optionUp.Next = null;
             }
         }
     }

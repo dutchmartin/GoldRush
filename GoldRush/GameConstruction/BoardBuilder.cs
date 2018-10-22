@@ -64,16 +64,23 @@ namespace GoldRush.GameConstruction
                             // Look up and down.
                             LinkTurnout(turnout1To2, y, x);
                             // Look left
-
+                            if (IsType<Track>(y, x - 1))
+                            {
+                                turnout1To2.Next = turnout1To2.optionDown;
+                            }
+                            turnout1To2.ChangeDirection();
+                            turnout1To2.ChangeDirection();
                             continue;
                         case Turnout2To1 turnout2To1:
                             // Look up and down.
                             LinkTurnout(turnout2To1, y, x);
                             // Look right
-                            if (IsType<Track>(y, x - 1))
+                            if (IsType<Track>(y, x + 1))
                             {
-                                turnout2To1.Next = _hasNexts[y][x - 1];
+                                turnout2To1.Next = _hasNexts[y][x + 1];
                             }
+                            turnout2To1.ChangeDirection();
+                            turnout2To1.ChangeDirection();
                             continue;
                         case WaterQuay waterQuay:
                             //Look left
@@ -96,7 +103,7 @@ namespace GoldRush.GameConstruction
         private bool IsType<T>(int y, int x)
         {
             // Check bounds.
-            if (x >= _hasNexts.Length || y >= _hasNexts.First().Length || x < 0 || x < 0)
+            if (y >= _hasNexts.Length || x >= _hasNexts.First().Length || x < 0 || y < 0)
                 return false;
             return _hasNexts[y][x] is T;
         }
@@ -107,7 +114,7 @@ namespace GoldRush.GameConstruction
             {
                 turnout.optionDown = _hasNexts[y + 1][x] as Track;
             }
-            // Look below for a Track.
+            // Look up for a Track.
             if (IsType<Track>(y - 1, x))
             {
                 turnout.optionUp = _hasNexts[y - 1][x] as Track;
