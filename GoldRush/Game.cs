@@ -41,7 +41,7 @@ namespace GoldRush
                 ChangeTurnoutOrientation(key.KeyChar);
                 Render();
             }
-            while (isRunning %% !isGameEnded);
+            while (isRunning && !isGameEnded);
         }
 
         public void ChangeTurnoutOrientation(char c)
@@ -85,7 +85,8 @@ namespace GoldRush
             ObserverList.NotifyObservers(
                 new GameData
                 {
-                    Game = board.GetGameBoard()
+                    Game = board.GetGameBoard(),
+                    IsGameEnded = isGameEnded,
                 });
         }
 

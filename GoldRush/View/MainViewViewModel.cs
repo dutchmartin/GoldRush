@@ -23,6 +23,11 @@ namespace GoldRush.View
 
         public void OnNext(GameData value)
         {
+            if (value.IsGameEnded)
+            {
+                new EndGameView().Render();
+                return;
+            }
             View.Board = _viewStringsFactory.GetDisplayLines(value.Game);
             View.Render();
         }
