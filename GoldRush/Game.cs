@@ -23,7 +23,7 @@ namespace GoldRush
             BoardBuilder builder = new BoardBuilder();
             board = builder.BuildBoard();
 
-            this.timer = new Timer(5000);
+            this.timer = new Timer(1000);
             timer.Elapsed += OnTimedEvent;
             timer.AutoReset = true;
             timer.Enabled = true;
@@ -69,10 +69,11 @@ namespace GoldRush
             {
                 isGameEnded = false;
                 timer.Dispose();
+                Console.WriteLine("EINDE");
                 return;
             }
 
-    board.HasAddedACart();
+            board.HasAddedACart();
             board.HasAddedAShip();
             board.KeepScore();
             board.AdjustAmountOfCarts();
