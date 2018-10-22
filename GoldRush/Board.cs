@@ -99,7 +99,7 @@ namespace GoldRush
 
         public double GetTimeInterval()
         {
-            double result = 10000;
+            double result = 5000;
             for(int i = Score%10; i > 0; i--)
             {
                 result -= 100;

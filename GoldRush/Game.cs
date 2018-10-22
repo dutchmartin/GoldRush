@@ -10,6 +10,7 @@ namespace GoldRush
 {
     public class Game : IObservable<GameData>
     {
+        private bool isRunning;
         public Board board { get; set; }
         public InputController InputController { get; set; } = new InputController();
         private Timer timer;
@@ -18,36 +19,29 @@ namespace GoldRush
 
         public void Play()
         {
+            isGameEnded = false;
             BoardBuilder builder = new BoardBuilder();
             board = builder.BuildBoard();
 
-            this.timer = new Timer(1000)
-            {
-                AutoReset = false
-            };
+            this.timer = new Timer(5000);
+            timer.Elapsed += OnTimedEvent;
+            timer.AutoReset = true;
+            timer.Enabled = true;
+            timer.Start();
+            isRunning = true;
             StartInputPeriod();
         }
         public void StartInputPeriod()
         {
-            this.timer.Start();
-            while (timer.Enabled)
+            Render();
+            ConsoleKeyInfo key;
+            do
             {
-                // Todo: write time of timer to screen.
+                key = Console.ReadKey();
+                ChangeTurnoutOrientation(key.KeyChar);
                 Render();
-                char input = InputController.GetKeyInput();
-                ChangeTurnoutOrientation(input);
             }
-            try
-            {
-                this.Tick();
-            }
-            catch(Exception e)
-            {
-                // End game.
-                return;
-            }
-            System.Threading.Thread.Sleep(20);
-            StartInputPeriod();
+            while (isRunning %% !isGameEnded);
         }
 
         public void ChangeTurnoutOrientation(char c)
@@ -55,17 +49,34 @@ namespace GoldRush
             board.ToggleTurnout(c);
         }
 
+        private void OnTimedEvent(Object source, ElapsedEventArgs e)
+        {
+            isRunning = false;
+            Tick();
+            isRunning = true;
+            StartInputPeriod();
+        }
+
         public void Tick()
         {
             //Tel het aantal intervallen met elkaar op en verklein het interval daarmee
             board.MoveShips();
-            board.MoveCarts();
-            board.HasAddedACart();
+            try
+            {
+                board.MoveCarts();
+            }
+            catch (Exception e)
+            {
+                isGameEnded = false;
+                timer.Dispose();
+                return;
+            }
+
+    board.HasAddedACart();
             board.HasAddedAShip();
             board.KeepScore();
             board.AdjustAmountOfCarts();
-            timer.Interval = board.GetTimeInterval();
-            this.Render();
+            //timer.Interval = board.GetTimeInterval();
         }
 
         public void Render()
@@ -76,12 +87,6 @@ namespace GoldRush
                 {
                     Game = board.GetGameBoard()
                 });
-        }
-
-        public void ResetInterval()
-        {
-            /* Logica voor het resetten van de timer */
-            timer.Interval = 1000;
         }
 
         public IDisposable Subscribe(IObserver<GameData> observer)

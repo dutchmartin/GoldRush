@@ -8,9 +8,15 @@ namespace GoldRush.Controller
 {
     public class InputController
     {
-        public char GetKeyInput()
+        public bool GetKeyInput(out char input)
         {
-            return Console.ReadKey().KeyChar;
+            if (Console.KeyAvailable)
+            {
+                input = Console.ReadKey().KeyChar;
+                return true;
+            }
+            input = ' ';
+            return false;
         }
     }
 }
