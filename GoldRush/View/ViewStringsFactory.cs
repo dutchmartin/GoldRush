@@ -31,10 +31,20 @@ namespace GoldRush.View
                     // Get the chars of special items.
                     return GetDisplayItem(track);
                 case WaterQuay waterQuay:
-                    return 'H';
+                    if(waterQuay.Occupant== null)
+                    {
+                        return 'H';
+                    }
+                    return 'O';
                 case WaterLink waterLink:
                     if (waterLink.Occupant is Ship)
+                    {
+                        if (waterLink.Occupant.isLoaded)
+                            return '0';
+
                         return '=';
+                    }
+                        
                     return '~';
                 default:
                     return ' ';

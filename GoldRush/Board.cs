@@ -13,7 +13,7 @@ namespace GoldRush
         private Random random;
         public WaterQuay quay { get; set; }
         public int Score { get; private set; }
-        public River FirstRiver { get; set; }
+        public WaterLink FirstRiver { get; set; }
 
         public Track TrackEnd { get; private set; }
         public List<Ship> Ships { get; private set; }
@@ -23,7 +23,7 @@ namespace GoldRush
 
         private HasNext[][] _GameBoard;
 
-        public Board(int score, Track TrackEnd, List<Hangar> hangars, Dictionary<char, Turnout> turnouts, WaterQuay quay, HasNext[][] GameBoard)
+        public Board(int score, Track TrackEnd, List<Hangar> hangars, Dictionary<char, Turnout> turnouts, WaterQuay quay, HasNext[][] GameBoard, WaterLink first)
         {
             Score = score;
             this.quay = quay;
@@ -33,7 +33,7 @@ namespace GoldRush
             random = new Random();
             Carts = new List<Cart>();
             Ships = new List<Ship>();
-            FirstRiver = new River();
+            FirstRiver = first;
             FirstRiver.Occupant = new Ship(FirstRiver);
             Ships.Add(FirstRiver.Occupant);
             _GameBoard = GameBoard;
@@ -66,7 +66,9 @@ namespace GoldRush
             }
             if(random.Next(1, 2) ==1)
             {
-                FirstRiver.Occupant = new Ship(FirstRiver);
+                Ship newShip = new Ship(FirstRiver);
+                FirstRiver.Occupant = newShip;
+                Ships.Add(newShip);
                 return true;
             }
             return false;
@@ -90,6 +92,10 @@ namespace GoldRush
             if(quay.Occupant.isLoaded)
             {
                 Score += 10;
+            }
+            if (quay.track.Occupant == null)
+            {
+                return;
             }
             if(!quay.track.Occupant.isLoaded)
             {
