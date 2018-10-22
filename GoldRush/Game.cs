@@ -86,7 +86,8 @@ namespace GoldRush
             ObserverList.NotifyObservers(
                 new GameData
                 {
-                    Game = board.GetGameBoard()
+                    Game = board.GetGameBoard(),
+                    IsGameEnded = isGameEnded,
                 });
         }
 

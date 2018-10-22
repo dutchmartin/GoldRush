@@ -34,6 +34,8 @@ namespace GoldRush.View
                     return 'H';
                 case WaterLink waterLink:
                     return '~';
+                case Ship ship:
+                    return '=';
                 default:
                     return ' ';
             }
