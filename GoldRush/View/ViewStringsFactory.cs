@@ -33,9 +33,9 @@ namespace GoldRush.View
                 case WaterQuay waterQuay:
                     return 'H';
                 case WaterLink waterLink:
+                    if (waterLink.Occupant is Ship)
+                        return '=';
                     return '~';
-                case Ship ship:
-                    return '=';
                 default:
                     return ' ';
             }

@@ -67,9 +67,9 @@ namespace GoldRush
             }
             catch (Exception e)
             {
-                isGameEnded = false;
+                isGameEnded = true;
                 timer.Dispose();
-                Console.WriteLine("EINDE");
+                Render();
                 return;
             }
 
