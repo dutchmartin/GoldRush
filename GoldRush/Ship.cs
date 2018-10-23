@@ -20,11 +20,11 @@ namespace GoldRush
         {
             if(location is WaterQuay)
             {
-               Cart Occupant = ((WaterQuay)location).track.Occupant;
-               if(Occupant != null)
-               {
-                    ExchangeLoad(Occupant);
-               }
+                if (isLoaded)
+                {
+                    return true;
+                }
+                return false;
             }
             else
             {
@@ -41,12 +41,6 @@ namespace GoldRush
                 }
                return false;
             }
-
-            if(load == 8)
-            {
-                return true;
-            }
-            return false;
         }
 
         public override void Move()
@@ -65,6 +59,8 @@ namespace GoldRush
             {
                 Occupant.isLoaded = false;
                 load++;
+                if (load == 8)
+                    isLoaded = true;
             }
         }
     }

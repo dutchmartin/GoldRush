@@ -51,7 +51,7 @@ namespace GoldRush
             {
                 while(AddedCart == null)
                 {
-                    ChosenHangar = Hangars[random.Next(0, 1)];
+                    ChosenHangar = Hangars[random.Next(0, 3)];
                     AddedCart = ChosenHangar.AddCart();
                 }
                 Carts.Add(AddedCart);
@@ -110,7 +110,7 @@ namespace GoldRush
             {
                 return;
             }
-            if(quay.track.Occupant.isLoaded)
+            if(!(quay.track.Occupant.isLoaded))
             {
                 Score += 1;
             }
@@ -143,6 +143,15 @@ namespace GoldRush
             {
                 t.ChangeDirection();
             }
+        }
+
+        public void ExchangeLoad()
+        {
+            if (quay.Occupant == null || quay.track.Occupant == null)
+                return;
+            Ship ship = quay.Occupant;
+            Cart cart = quay.track.Occupant;
+            ship.ExchangeLoad(cart);
         }
     }
 }
