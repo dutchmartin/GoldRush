@@ -3,7 +3,7 @@
   <Class Name="GoldRush.Board" Collapsed="true">
     <Position X="3.25" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QBAAAECEAQAAAAgAEAAACACAAAAAAgACKAQCAEAABBA=</HashCode>
+      <HashCode>QBAAAEiEAQAAAAgAEAAACACAAAAAAgACKAQCAEAABBA=</HashCode>
       <FileName>Board.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -112,13 +112,6 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
       <FileName>OccupantLink.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="GoldRush.IsEnd">
-    <Position X="5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IsEnd.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="GoldRush.Direction">

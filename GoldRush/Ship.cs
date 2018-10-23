@@ -31,7 +31,8 @@ namespace GoldRush
                 WaterLink nextWaterLink = (WaterLink)location.Next;
                 if(nextWaterLink == null)
                 {
-                    //TODO remove ship
+                    location.Occupant = null;
+                    this.location = null;
                     return false;
                 }
                 if(nextWaterLink.Occupant == null)

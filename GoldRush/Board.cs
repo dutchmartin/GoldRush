@@ -27,7 +27,7 @@ namespace GoldRush
         {
             Score = score;
             this.quay = quay;
-            TrackEnd = TrackEnd;
+            this.TrackEnd = TrackEnd;
             Hangars = hangars;
             Turnouts = turnouts;
             random = new Random();
@@ -79,8 +79,21 @@ namespace GoldRush
         }
         public void MoveShips()
         {
-            if(Ships.Count > 0)
+            if (Ships.Count > 0)
+            {
                 Ships.ForEach(s => s.Move());
+                Ships.RemoveAll(s => s.location == null);
+            }
+        }
+
+        public void removeTrackEndCart()
+        {
+            if(TrackEnd.Occupant != null)
+            {
+                Cart removeableCart = TrackEnd.Occupant;
+                Carts.Remove(removeableCart);
+                TrackEnd.Occupant = null;
+            }
         }
 
         public void KeepScore()
@@ -97,7 +110,7 @@ namespace GoldRush
             {
                 return;
             }
-            if(!quay.track.Occupant.isLoaded)
+            if(quay.track.Occupant.isLoaded)
             {
                 Score += 1;
             }
@@ -105,7 +118,7 @@ namespace GoldRush
 
         public double GetTimeInterval()
         {
-            double result = 5000;
+            double result = 2000;
             for(int i = Score%10; i > 0; i--)
             {
                 result -= 100;

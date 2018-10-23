@@ -61,6 +61,7 @@ namespace GoldRush
         {
             //Tel het aantal intervallen met elkaar op en verklein het interval daarmee
             board.MoveShips();
+            board.removeTrackEndCart();
             try
             {
                 board.MoveCarts();
@@ -88,6 +89,7 @@ namespace GoldRush
                 {
                     Game = board.GetGameBoard(),
                     IsGameEnded = isGameEnded,
+                    score = board.Score
                 });
         }
 

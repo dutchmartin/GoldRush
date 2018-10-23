@@ -4,5 +4,6 @@
     {
         public HasNext[][] Game;
         public bool IsGameEnded;
+        public int score;
     }
 }

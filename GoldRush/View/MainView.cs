@@ -9,6 +9,7 @@ namespace GoldRush.View
     class MainView : IRenderable
     {
         public string[] Board { get; set; }
+        public int score;
         public void Render()
         {
             // TODO: modify the displaybuffer instead of rewriting everything.
@@ -39,6 +40,7 @@ namespace GoldRush.View
         {
             // TODO: Can be refactored to a file read.
             Console.Write(
+                "##### Score " + score + " #####\n"+
                 "###################\n" +
                 " Use Q W E R T to\n" +
                 " Change the carts path\n"
