@@ -37,6 +37,13 @@ namespace GoldRush
             FirstRiver.Occupant = new Ship(FirstRiver);
             Ships.Add(FirstRiver.Occupant);
             _GameBoard = GameBoard;
+            foreach (var t in turnouts)
+            {
+                for (int i = random.Next(1, 3); i >= 0; i--)
+                {
+                    t.Value.ChangeDirection();
+                }
+            }
         }
 
         public bool HasAddedACart()
