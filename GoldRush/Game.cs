@@ -14,7 +14,7 @@ namespace GoldRush
         public Board board { get; set; }
         public InputController InputController { get; set; } = new InputController();
         private Timer timer;
-        private Boolean isGameEnded;
+        private bool isGameEnded;
         private View.ObserverList<IObserver<GameData>, GameData> ObserverList = new View.ObserverList<IObserver<GameData>, GameData>();
 
         public void Play()
@@ -25,6 +25,7 @@ namespace GoldRush
 
             this.timer = new Timer(1000);
             timer.Elapsed += OnTimedEvent;
+            timer.Elapsed += DecreaseTimerInterval;
             timer.AutoReset = true;
             timer.Enabled = true;
             timer.Start();
@@ -98,6 +99,19 @@ namespace GoldRush
         {
             ObserverList.Add(observer);
             return ObserverList;
+        }
+        private void DecreaseTimerInterval(Object source, ElapsedEventArgs e)
+        {
+            var interval = NewTimerMilisecondsTime( this.timer.Interval);
+            // Create a minimum.
+            if (interval < 50)
+                interval = 50;
+            this.timer.Interval = this.timer.Interval;
+        }
+        private double NewTimerMilisecondsTime(double Time)
+        {
+            const double PowerTo = 13 / 10;
+            return 1000 - Math.Ceiling(Math.Pow(Time, PowerTo));
         }
     }
 }

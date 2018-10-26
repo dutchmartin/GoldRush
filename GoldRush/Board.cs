@@ -12,7 +12,7 @@ namespace GoldRush
         private int amountOfCarts = 1;
         private Random random;
         public WaterQuay quay { get; set; }
-        public int Score { get; private set; }
+        public int Score { get; private set; } = 0;
         public WaterLink FirstRiver { get; set; }
 
         public Track TrackEnd { get; private set; }
@@ -71,7 +71,7 @@ namespace GoldRush
             {
                 return false;
             }
-            if(random.Next(1, 2) ==1)
+            if(random.Next(1, 10) == 1)
             {
                 Ship newShip = new Ship(FirstRiver);
                 FirstRiver.Occupant = newShip;

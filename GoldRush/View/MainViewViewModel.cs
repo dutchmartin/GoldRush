@@ -25,7 +25,11 @@ namespace GoldRush.View
         {
             if (value.IsGameEnded)
             {
-                new EndGameView().Render();
+                new EndGameView
+                {
+                    Score = value.score
+                }
+                .Render();
                 return;
             }
             View.Board = _viewStringsFactory.GetDisplayLines(value.Game);
