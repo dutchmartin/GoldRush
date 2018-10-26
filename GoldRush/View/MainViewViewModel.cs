@@ -29,6 +29,7 @@ namespace GoldRush.View
                 return;
             }
             View.Board = _viewStringsFactory.GetDisplayLines(value.Game);
+            View.score = value.score;
             View.Render();
         }
     }

@@ -60,7 +60,10 @@ namespace GoldRush
         public void Tick()
         {
             //Tel het aantal intervallen met elkaar op en verklein het interval daarmee
+            board.ExchangeLoad();
+            board.KeepScore();
             board.MoveShips();
+            board.removeTrackEndCart();
             try
             {
                 board.MoveCarts();
@@ -75,9 +78,8 @@ namespace GoldRush
 
             board.HasAddedACart();
             board.HasAddedAShip();
-            board.KeepScore();
             board.AdjustAmountOfCarts();
-            //timer.Interval = board.GetTimeInterval();
+            timer.Interval = board.GetTimeInterval();
         }
 
         public void Render()
@@ -88,6 +90,7 @@ namespace GoldRush
                 {
                     Game = board.GetGameBoard(),
                     IsGameEnded = isGameEnded,
+                    score = board.Score
                 });
         }
 
