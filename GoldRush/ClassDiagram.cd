@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="GoldRush.Board" Collapsed="true">
-    <Position X="3.25" Y="8" Width="1.5" />
+  <Class Name="GoldRush.Board">
+    <Position X="7" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QBAAAECEAQAAAAgAEAAACACAAAAAAgACKAQCAEAABBA=</HashCode>
       <FileName>Board.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.Cart">
-    <Position X="9.5" Y="9" Width="1.5" />
+    <Position X="9.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAgAAAAAAABAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Cart.cs</FileName>
@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.MoveableObject">
-    <Position X="10.5" Y="6.75" Width="1.5" />
+    <Position X="10.5" Y="12.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAgAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MoveableObject.cs</FileName>
@@ -36,7 +36,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.Ship">
-    <Position X="11.5" Y="9" Width="1.5" />
+    <Position X="11.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAIAgAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Ship.cs</FileName>
@@ -51,7 +51,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GoldRush.HasNextFactory" Collapsed="true">
-    <Position X="3.25" Y="7" Width="1.5" />
+    <Position X="0.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAQAAAABAAAAA=</HashCode>
       <FileName>GameConstruction\HasLinkFactory.cs</FileName>
@@ -65,14 +65,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.Turnout1To2">
-    <Position X="7.75" Y="7.5" Width="1.5" />
+    <Position X="7.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Turnout1To2.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GoldRush.Turnout2To1">
-    <Position X="5.5" Y="7.5" Width="1.5" />
+    <Position X="5.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Turnout2To1.cs</FileName>
@@ -100,6 +100,14 @@
       <FileName>Yard.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="GoldRush.Game">
+    <Position X="5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAEAAAABQAAQAAAAAAAAKAAICoBAAAAAAQAA=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
   <Interface Name="GoldRush.HasNext">
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
@@ -115,7 +123,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="GoldRush.IsEnd">
-    <Position X="5" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IsEnd.cs</FileName>

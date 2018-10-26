@@ -83,8 +83,10 @@
     <Compile Include="Yard.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AKD.cd" />
     <None Include="App.config" />
     <None Include="ClassDiagram.cd" />
+    <None Include="View\view.cd" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="levels\Level.txt" />
